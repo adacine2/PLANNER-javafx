@@ -103,6 +103,36 @@
             <version>17.0.45</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>eu.hansolo</groupId>
+            <artifactId>applefx</artifactId>
+            <version>17.0.45</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>eu.hansolo.fx</groupId>
+            <artifactId>countries</artifactId>
+            <version>17.0.23</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>eu.hansolo</groupId>
+            <artifactId>toolboxfx</artifactId>
+            <version>17.0.29</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>eu.hansolo</groupId>
+            <artifactId>toolbox</artifactId>
+            <version>17.0.26</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>eu.hansolo.fx</groupId>
+            <artifactId>heatmap</artifactId>
+            <version>17.0.12</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
