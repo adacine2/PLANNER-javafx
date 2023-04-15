@@ -1,0 +1,43 @@
+.root {
+    -fx-background-color: #1E2A39;
+    -fx-font-family: helvetica;
+    -fx-text-box-border: transparent;
+    -fx-focus-color: transparent;
+    -fx-border-color: transparent;
+}
+/******** NEFUNGUJE- for no reason *******/
+.hbox {
+    -fx-background: #d9d9d9;
+    -fx-padding: 0;
+}
+#logo-big{
+    -fx-fit-width: 200px;
+    -fx-fit-height: 200px;
+}
+/******** az sem NEFUNGUJE *******/
+.button {
+    -fx-background-color: #d9d9d9;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+    -fx-text-fill: #1e2a39;
+    -fx-border-width: 0;
+    -fx-outer-border: transparent;
+    -fx-background-radius: 0;
+}
+.button:hover {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #466285;
+    -fx-transition: all 0.5s ease;
+}
+
+.button.pressed {
+    -fx-background-color: #1e2a39;
+    -fx-text-fill: #ffffff;
+    -fx-transition: all 0.5s ease;
+    -fx-border-width: 0;
+}
+.menu-separator {
+    -fx-background-color: #1e2a39;
+    -fx-outer-border: transparent;
+}
