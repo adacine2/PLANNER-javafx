@@ -5,6 +5,22 @@
     -fx-focus-color: transparent;
     -fx-border-color: transparent;
 }
+.label{
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+}
+.text-field{
+    -fx-background-color: #d9d9d9;
+    -fx-text-fill: #1e2a39;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+    -fx-border-width: 0;
+    -fx-outer-border: transparent;
+    -fx-background-radius: 15;
+}
 /******** NEFUNGUJE- for no reason *******/
 .hbox {
     -fx-background: #d9d9d9;
@@ -29,6 +45,12 @@
     -fx-text-fill: #ffffff;
     -fx-background-color: #466285;
     -fx-transition: all 0.5s ease;
+}
+
+.button:hover .button-image {
+    -fx-fill: #ffffff;
+    -fx-transition: all 0.5s ease;
+    -fx-opacity: 0.2;
 }
 
 .button.pressed {

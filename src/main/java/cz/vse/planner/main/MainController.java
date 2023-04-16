@@ -1,9 +1,16 @@
 package cz.vse.planner.main;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
 
 public class MainController {
     @FXML
@@ -60,8 +67,32 @@ public class MainController {
                 previousImageView = imageView;
                 previousIconPath = originalIconPath;
             }
+
+            if (button.getId().equals("LOGIN")) {
+                showLoginScene();
+            }
         });
     }
 
+    private void showLoginScene() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/login.fxml"));
+            Parent loginParent = fxmlLoader.load();
+
+
+
+            // Get the current stage from any control (in this case, the LOGIN button)
+            Stage primaryStage = (Stage) buttonLOGIN.getScene().getWindow();
+            // Save the current dimensions of the window
+            double currentWidth = primaryStage.getWidth();
+            double currentHeight = primaryStage.getHeight();
+            Scene loginScene = new Scene(loginParent, currentWidth, currentHeight);
+
+
+            primaryStage.setScene(loginScene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

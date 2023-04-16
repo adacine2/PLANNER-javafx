@@ -13,10 +13,11 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/home.fxml"));
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/login.fxml"));
         Parent root = loader.load();
 
         Scene scene = new Scene(root, 320, 240);
-        stage.setTitle("PLANNER v0.0.1");
+        stage.setTitle("PLANNER v0.0.4");
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/cz/vse/planner/icons/diary_small_b.png")));
         stage.setScene(scene);
         stage.setMaximized(true);
