@@ -52,7 +52,7 @@
                </graphic>
             </Button>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
-            <Button id="LOGIN" fx:id="buttonLOGIN" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="pressed" text="LOGIN">
+            <Button id="LOGIN" fx:id="buttonLOGIN" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="LOGIN">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -75,14 +75,18 @@
       <HBox alignment="CENTER_RIGHT" maxHeight="75.0" prefHeight="50.0" style="-fx-background-color: #d9d9d9;" GridPane.columnIndex="5" GridPane.columnSpan="2">
          <children>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
-            <Button id="HOME" fx:id="buttonADMIN" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" styleClass="button-menu" text="home" HBox.hgrow="NEVER">
+            <Button id="HOME" fx:id="buttonADMIN" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" text="home" HBox.hgrow="NEVER">
                <graphic>
-                  <ImageView fx:id="iconADMIN" cache="true" cacheHint="SPEED" fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="iconADMIN" cache="true" cacheHint="SPEED" fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" styleClass="pressed">
                      <image>
-                        <Image url="@../icons/admin_gear_b.png" />
+                        <Image url="@../icons/admin_gear_w.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <styleClass>
+                  <String fx:value="button-menu" />
+                  <String fx:value="pressed" />
+               </styleClass>
             </Button>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
          </children>
@@ -104,15 +108,15 @@
          <children>
             <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="3">
                <children>
-                  <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="USER VERIFICATION" textAlignment="CENTER" />
+                  <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="ADMIN VERIFICATION" textAlignment="CENTER" />
                </children>
             </HBox>
             <TextField promptText="Email" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1" />
-            <Button fx:id="loginButton1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" minHeight="50.0" minWidth="90.0" mnemonicParsing="false" text="NEXT" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="loginButton1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" minHeight="50.0" minWidth="90.0" mnemonicParsing="false" text="LOGIN" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <styleClass>
                   <String fx:value="login" />
-                  <String fx:value="button" />
                   <String fx:value="button-login" />
+                  <String fx:value="green" />
                </styleClass>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -125,6 +129,7 @@
                   </ImageView>
                </graphic>
             </Button>
+            <TextField promptText="Password" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
          </children>
       </GridPane>
    </children>

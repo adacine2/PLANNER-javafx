@@ -5,7 +5,10 @@
     -fx-focus-color: transparent;
     -fx-border-color: transparent;
 }
-
+.text-dummy{
+    -fx-fill: #ffffff!important;
+    -fx-font-size: 15px;
+}
 .label{
     -fx-text-fill: #ffffff;
     -fx-font-size: 20px;
@@ -23,15 +26,11 @@
     -fx-outer-border: transparent;
     -fx-background-radius: 15;
 }
-/******** NEFUNGUJE- for no reason *******/
 .hbox {
-    -fx-background: #d9d9d9;
+    -fx-background-color: #d9d9d9;
     -fx-padding: 0;
 }
-#logo-big{
-    -fx-fit-width: 200px;
-    -fx-fit-height: 200px;
-}
+
 /******** az sem NEFUNGUJE *******/
 .button {
     -fx-background-color: #d9d9d9;
@@ -64,4 +63,38 @@
 .menu-separator {
     -fx-background-color: #1e2a39;
     -fx-outer-border: transparent;
+}
+/*
+.green{
+    -fx-background-color: green!important;
+    -fx-tex
+}
+*/
+
+._8{
+    -fx-fill: #8f268f;
+    -fx-background-color: #8f268f;
+    -fx-text-fill: #000;
+}
+._9{
+    -fx-fill: green;
+    -fx-background-color: green;
+    -fx-text-fill: #000;
+}
+
+.logout-dummy{
+    -fx-background-color: #b21f1f;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.save-dummy{
+    -fx-background-color: #45bd28;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.menu-button.label {
+    -fx-background-color: black;
+    fx-text-fill: black;
 }

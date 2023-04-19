@@ -87,7 +87,7 @@
 
 .button-calendar-filter{
     -fx-background-color: #fff;
-    -fx-background-radius: 30;
+    -fx-background-radius: 30;;
 }
 
 
@@ -95,12 +95,12 @@
 
 .button-my_events{
     -fx-background-color: green;
-    -fx-font-size: 10px;
+    -fx-font-size: 30px;
     -fx-font-weight: bold;
     -fx-text-fill: #ffffff;
     -fx-border-width: 0;
     -fx-outer-border: transparent;
-    -fx-background-radius: 8;
+    -fx-background-radius: 20;
 }
 .button-my_events._1{
     -fx-background-color: #ff0000;
@@ -131,21 +131,10 @@
     -fx-background-color: #ff00ff;
     -fx-text-fill: #000;
 }
-
-.filter-active{
-    -fx-background-color: #9f9f9f;
-    -fx-opacity: 0.8;
-}
-.BUTTON-filter-active{
-    -fx-background-color: #d9d9d9;
-    -fx-text-fill: #000!important;
-}
-.LABEL-filter-active{
-    -fx-text-fill: #000!important;
-    -fx-font-size: 20px!important;
-    -fx-font-weight: bold!important;
-}
-.label{
+.label-my_events{
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
 }
 
 
@@ -182,4 +171,46 @@
 .menu-separator {
     -fx-background-color: #1e2a39;
     -fx-outer-border: transparent;
+}
+.label{
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+}
+.back{
+    -fx-background-color: #b21f1f;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.save{
+    -fx-background-color: #45bd28;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.add{
+    -fx-background-color: #fff;
+    -fx-background-radius: 30;
+}
+.tag{
+    -fx-background-color: orange;
+    -fx-background-radius: 9;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 15px;
+}
+.text-field{
+    -fx-background-color: #d9d9d9;
+    -fx-text-fill: #1e2a39;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+    -fx-border-width: 0;
+    -fx-outer-border: transparent;
+    -fx-background-radius: 15;
+}
+.import{
+    -fx-fill: #ffffff;
+    -fx-font-size: 15px;
 }

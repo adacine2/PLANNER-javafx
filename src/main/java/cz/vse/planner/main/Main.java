@@ -12,7 +12,7 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/planner.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/login_password.fxml"));
 //        FXMLLoader loader = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/login.fxml"));
         Parent root = loader.load();
 

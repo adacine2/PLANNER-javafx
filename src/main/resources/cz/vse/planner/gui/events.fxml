@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" stylesheets="@../styles/StyleDark.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.planner.main.MainController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="45.0" vgrow="NEVER" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBox alignment="CENTER_LEFT" maxHeight="75.0" prefHeight="50.0" styleClass="hbox" GridPane.columnSpan="5">
+         <children>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+            <Button id="HOME-button" fx:id="buttonHOME" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" styleClass="button-menu" text="HOME">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <graphic>
+                  <ImageView id="HOME-button-icon" fx:id="iconHOME" cache="true" cacheHint="SPEED" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/home_b.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+            <Button id="LOGIN" fx:id="buttonLOGIN" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="button-menu" text="LOGIN">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+            <Button id="EVENTS" fx:id="buttonEVENTS" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="EVENTS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <styleClass>
+                  <String fx:value="button-menu" />
+                  <String fx:value="pressed" />
+               </styleClass>
+            </Button>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+          <Button id="NEWS" fx:id="buttonNEWS" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="button-menu" text="NEWS" wrapText="true">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" maxHeight="75.0" prefHeight="50.0" styleClass="hbox" GridPane.columnIndex="5">
+         <children>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+            <Button id="HOME" fx:id="buttonADMIN" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" styleClass="button-menu" text="home" HBox.hgrow="NEVER">
+               <graphic>
+                  <ImageView fx:id="iconADMIN" cache="true" cacheHint="SPEED" fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/admin_gear_b.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+         </children>
+      </HBox>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" GridPane.rowSpan="2147483647">
+         <children>
+            <AnchorPane layoutX="146.0" layoutY="27.0" prefHeight="138.0" prefWidth="409.0" styleClass="_8">
+               <children>
+                  <Label layoutX="122.0" layoutY="16.0" text="Barbie - cinema meet" />
+                  <Text layoutX="178.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dummy" text="21.6.2023" />
+                  <Text layoutX="161.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dummy" text="tbc@tbc.com" />
+                  <ImageView fitHeight="21.0" fitWidth="16.0" layoutX="122.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/user1_w.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="21.0" fitWidth="16.0" layoutX="146.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/calendar_w.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="124.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dummy" text="London - Trafalgar square" />
+                  <ImageView fitHeight="21.0" fitWidth="16.0" layoutX="97.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/location_w.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="146.0" layoutY="208.0" prefHeight="138.0" prefWidth="409.0" styleClass="_9">
+               <children>
+                  <Label layoutX="122.0" layoutY="16.0" text="Výroční běh - prAHA" />
+                  <Text layoutX="178.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dummy" text="30.7.2023" />
+                  <Text layoutX="171.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dummy" text="Klánovice " />
+                  <ImageView fitHeight="21.0" fitWidth="16.0" layoutX="122.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/location_w.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="21.0" fitWidth="16.0" layoutX="146.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/calendar_w.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="147.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dummy" text="nebeham@rad.cz" />
+                  <ImageView fitHeight="21.0" fitWidth="16.0" layoutX="122.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/user1_w.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
