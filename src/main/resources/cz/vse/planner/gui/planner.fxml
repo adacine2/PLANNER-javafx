@@ -82,7 +82,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label alignment="CENTER" maxHeight="200.0" prefWidth="200.0" styleClass="label-left-panel" text="MONTH:" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" maxHeight="200.0" prefWidth="200.0" styleClass="label-left-panel" text="MONTH: MAY" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
             <Button id="PLANNER-button" alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="8.0" maxHeight="30.0" minHeight="38.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="400.0" styleClass="button-left-panel" text="MY EVENTS" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="10">
                <graphic>
                   <ImageView fx:id="iconADD1" cache="true" cacheHint="SPEED" fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -110,7 +110,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label alignment="CENTER" maxHeight="200.0" prefWidth="200.0" styleClass="label-left-panel" text="YEAR:" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" />
+            <Label alignment="CENTER" maxHeight="200.0" prefWidth="200.0" styleClass="label-left-panel" text="YEAR: 2023" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" />
          </children>
       </GridPane>
       <GridPane alignment="CENTER" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" GridPane.rowSpan="2147483647">

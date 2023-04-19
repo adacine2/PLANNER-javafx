@@ -137,6 +137,13 @@
     -fx-font-weight: bold;
 }
 
+.rounded-button{
+    -fx-background-radius: 50;
+}
+.remove{
+    -fx-background-color: #ff0000;
+}
+
 
 /******** MENU **********/
 

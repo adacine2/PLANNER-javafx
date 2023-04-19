@@ -1,0 +1,65 @@
+.root {
+    -fx-background-color: #d9d9d9;
+    -fx-font-family: helvetica;
+    -fx-text-box-border: transparent;
+    -fx-focus-color: transparent;
+    -fx-border-color: transparent;
+}
+.final{
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.label-out{
+    -fx-text-fill: #000;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+}
+.label-in{
+    -fx-text-fill: #000;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+}
+.email-button{
+    -fx-background-color: #485a70;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.email-button.sent{
+    -fx-background-color: #65a956;
+    -fx-text-fill: #ffffff;
+}
+.list-cell:even {
+    -fx-background-color: #100f0f;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-border-color: transparent;
+}
+.list-cell:odd {
+    -fx-background-color: #312f2f;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-border-color: transparent;
+}
+.new_user{
+    -fx-background-color: #d9d9d9;
+    -fx-text-fill: #1e2a39;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+    -fx-border-width: 0;
+    -fx-outer-border: transparent;
+    -fx-background-radius: 4;
+}
+.rounded-button{
+    -fx-background-radius: 50;
+}
+.remove{
+    -fx-background-color: #ff0000;
+}
+.save{
+    -fx-background-color: #45bd28;
+}

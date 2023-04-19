@@ -4,8 +4,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -93,68 +91,134 @@
       </HBox>
       <GridPane alignment="CENTER" prefHeight="60.0" prefWidth="107.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" GridPane.rowSpan="2147483647">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" />
+          <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="60.0" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="60.0" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="75.0" minHeight="20.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+          <RowConstraints vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="ADMIN VERIFICATION" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" />
-            <TextField promptText="Email" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1" />
-            <Button fx:id="loginButton1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" minHeight="50.0" minWidth="90.0" mnemonicParsing="false" text="LOGIN" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-               <styleClass>
-                  <String fx:value="login" />
-                  <String fx:value="button-login" />
-                  <String fx:value="green" />
-               </styleClass>
+            <Button fx:id="loginButton1" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="6.0" minHeight="50.0" minWidth="90.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="91.0" text="USERS" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <graphic>
-                  <ImageView id="HOME-button-icon" fx:id="iconHOME11" cache="true" cacheHint="SPEED" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="50.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/next_b.png" />
+                        <Image url="@../icons/team.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="button-admin" />
+                  <String fx:value="users" />
+               </styleClass>
+            </Button>
+            <Button fx:id="loginButton1111" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="6.0" minHeight="50.0" minWidth="90.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="91.0" text="EVENTS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/clipboard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="button-admin" />
+                  <String fx:value="events" />
+               </styleClass>
+            </Button>
+            <Button fx:id="loginButton11" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="6.0" minHeight="50.0" minWidth="90.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="91.0" styleClass="button-admin" text="SETTINGS" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/setting.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <TextField promptText="Password" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+            <Button fx:id="loginButton112" alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="6.0" minHeight="50.0" minWidth="90.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="91.0" text="SOON" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="button-admin" />
+                  <String fx:value="inactive" />
+               </styleClass>
+            </Button>
+            <Button fx:id="loginButton111" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="6.0" minHeight="50.0" minWidth="90.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="91.0" text="SOON" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="button-admin" />
+                  <String fx:value="inactive" />
+               </styleClass>
+            </Button>
+            <Button fx:id="loginButton1112" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="6.0" minHeight="50.0" minWidth="90.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="91.0" text="SOON" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="button-admin" />
+                  <String fx:value="inactive" />
+               </styleClass>
+            </Button>
+            <Button fx:id="loginButton11121" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="6.0" minHeight="50.0" minWidth="90.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="91.0" text="SOON" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="button-admin" />
+                  <String fx:value="inactive" />
+               </styleClass>
+            </Button>
+            <Button fx:id="loginButton11122" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="6.0" minHeight="50.0" minWidth="90.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="91.0" text="SOON" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="button-admin" />
+                  <String fx:value="inactive" />
+               </styleClass>
+            </Button>
          </children>
       </GridPane>
-      <HBox alignment="CENTER_LEFT" maxHeight="75.0" prefHeight="50.0" styleClass="admin-panel" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+      <HBox alignment="CENTER_RIGHT" maxHeight="75.0" prefHeight="50.0" styleClass="admin-panel" GridPane.columnSpan="2147483647" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <children>
-            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
-            <Button id="HOME-button" fx:id="buttonHOME1" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="50.0" prefWidth="60.0" styleClass="button-admin" text="HOME">
+            <Button id="EVENTS" fx:id="buttonEVENTS1" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="30.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" styleClass="admin-panel-button" text="EVENTS">
                <HBox.margin>
-                  <Insets />
+                  <Insets right="5.0" />
                </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/undo1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
-            <Button id="LOGIN" fx:id="buttonLOGIN1" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="button-admin" text="LOGIN">
+            <Button id="NEWS" fx:id="buttonNEWS1" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="30.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" styleClass="admin-panel-button" text="EVENTS" wrapText="true">
                <HBox.margin>
-                  <Insets />
+                  <Insets right="5.0" />
                </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/off.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
-            <Button id="EVENTS" fx:id="buttonEVENTS1" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="button-admin" text="EVENTS">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Button>
-            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
-            <Button id="NEWS" fx:id="buttonNEWS1" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="button-admin" text="NEWS" wrapText="true">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Button>
-            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
          </children>
       </HBox>
    </children>

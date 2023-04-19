@@ -200,6 +200,12 @@
     -fx-text-fill: #ffffff;
     -fx-font-size: 15px;
 }
+.tag._1{
+    -fx-background-color: #ff0000;
+}
+.tag._2{
+    -fx-background-color: #65a956;
+}
 .text-field{
     -fx-background-color: #d9d9d9;
     -fx-text-fill: #1e2a39;
@@ -213,4 +219,9 @@
 .import{
     -fx-fill: #ffffff;
     -fx-font-size: 15px;
+}
+.import.inactive{
+    -fx-fill: darkgray;
+    -fx-font-size: 15px;
+    -fx-text-fill: #000;
 }

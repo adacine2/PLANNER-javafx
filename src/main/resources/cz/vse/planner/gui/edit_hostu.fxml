@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" stylesheets="@../styles/guest_list.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.planner.main.LoginController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="45.0" vgrow="NEVER" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <Button mnemonicParsing="false" prefWidth="400.0" text="SAVE" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+         <styleClass>
+            <String fx:value="final" />
+            <String fx:value="save" />
+         </styleClass></Button>
+      <Button mnemonicParsing="false" prefWidth="400.0" text="REJECT" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="8">
+         <styleClass>
+            <String fx:value="final" />
+            <String fx:value="remove" />
+         </styleClass></Button>
+      <Label alignment="CENTER" styleClass="label-out" text="Invitation" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+      <Label alignment="CENTER" styleClass="label-out" text="Email" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+      <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="1" GridPane.rowSpan="6" />
+      <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="6" />
+      <Button mnemonicParsing="false" prefWidth="400.0" styleClass="email-button" text="SEND" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+      <Button mnemonicParsing="false" prefWidth="400.0" text="SENT" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="2">
+         <styleClass>
+            <String fx:value="email-button" />
+            <String fx:value="sent" />
+         </styleClass>
+      </Button>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label-in" text="tbc@tbc.com" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label-in" text="example@gmail.com" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <TextField alignment="CENTER" promptText="email" styleClass="new_user" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+      <ToggleButton mnemonicParsing="false" prefWidth="400.0" text="WILL BE SENT" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="3">
+         <styleClass>
+            <String fx:value="email-button" />
+            <String fx:value="sent" />
+         </styleClass>
+      </ToggleButton>
+      <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="66.0" prefWidth="65.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/bin.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="rounded-button" />
+            <String fx:value="remove" />
+         </styleClass>
+      </Button>
+      <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="66.0" prefWidth="65.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/bin.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="rounded-button" />
+            <String fx:value="remove" />
+         </styleClass>
+      </Button>
+      <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="66.0" prefWidth="65.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/checkmark.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="rounded-button" />
+            <String fx:value="save" />
+         </styleClass>
+      </Button>
+   </children>
+</GridPane>

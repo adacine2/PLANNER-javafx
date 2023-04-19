@@ -3,6 +3,7 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
@@ -152,15 +153,15 @@
       </HBox>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="new_event" stylesheets="@../styles/new_event.css" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" GridPane.rowSpan="2147483647">
          <children>
-            <Label layoutX="57.0" layoutY="48.0" text="Title:" />
-            <Label layoutX="42.0" layoutY="144.0" text="Location:" />
+            <Label layoutX="54.0" layoutY="54.0" text="Title:" />
+            <Label layoutX="45.0" layoutY="169.0" text="Location:" />
             <Label layoutX="46.0" layoutY="248.0" text="Privacy:" />
             <Button layoutX="285.0" layoutY="469.0" mnemonicParsing="false" prefWidth="100.0" styleClass="back" text="Cancel" />
             <Button layoutX="160.0" layoutY="469.0" mnemonicParsing="false" prefWidth="100.0" styleClass="save" text="Save" />
-            <Label layoutX="48.0" layoutY="191.0" text="Guests:" />
+            <Label layoutX="46.0" layoutY="209.0" text="Guests:" />
             <Label layoutX="57.0" layoutY="303.0" text="Tags:" />
-            <Label layoutX="55.0" layoutY="95.0" text="Time:" />
-            <Button contentDisplay="GRAPHIC_ONLY" layoutX="303.0" layoutY="298.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="add" text="Button">
+            <Label layoutX="52.0" layoutY="130.0" text="Time:" />
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="443.0" layoutY="298.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="add" text="Button">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -169,12 +170,31 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="150.0" layoutY="298.0" mnemonicParsing="false" styleClass="tag" text="my custom tag" />
-            <TextField layoutX="174.0" layoutY="43.0" />
-            <TextField layoutX="174.0" layoutY="90.0" />
-            <TextField layoutX="174.0" layoutY="139.0" />
-            <Button layoutX="207.0" layoutY="186.0" mnemonicParsing="false" styleClass="import" text="Import from csv" />
-            <ToggleButton layoutX="217.0" layoutY="243.0" mnemonicParsing="false" styleClass="import" text="Private event" />
+            <Button layoutX="288.0" layoutY="297.0" mnemonicParsing="false" text="my custom tag#2">
+               <styleClass>
+                  <String fx:value="tag" />
+                  <String fx:value="_1" />
+               </styleClass>
+            </Button>
+            <TextField layoutX="177.0" layoutY="49.0" promptText="Title" />
+            <TextField layoutX="181.0" layoutY="125.0" prefHeight="31.0" prefWidth="85.0" promptText="Start" />
+            <TextField layoutX="177.0" layoutY="164.0" promptText="Location" />
+            <Button layoutX="283.0" layoutY="204.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="131.0" styleClass="import" text="Import from csv" />
+            <ToggleButton layoutX="181.0" layoutY="243.0" mnemonicParsing="false" prefWidth="175.0" styleClass="import" text="Private event" />
+            <TextField layoutX="292.0" layoutY="125.0" prefHeight="31.0" prefWidth="85.0" promptText="End" />
+            <Button layoutX="129.0" layoutY="204.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="131.0" style="-fx-background-color: darkgrey;" text="Edit">
+               <styleClass>
+                  <String fx:value="import" />
+                  <String fx:value="inactive" />
+               </styleClass></Button>
+            <Button layoutX="128.0" layoutY="297.0" mnemonicParsing="false" text="my custom tag#1">
+               <styleClass>
+                  <String fx:value="tag" />
+                  <String fx:value="_3" />
+               </styleClass>
+            </Button>
+            <Label layoutX="53.0" layoutY="92.0" text="Date:" />
+            <DatePicker layoutX="181.0" layoutY="87.0" prefHeight="31.0" prefWidth="190.0" />
          </children>
       </AnchorPane>
    </children>

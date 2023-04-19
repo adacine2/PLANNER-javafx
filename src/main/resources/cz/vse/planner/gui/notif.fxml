@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.planner.main.LoginController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="45.0" vgrow="NEVER" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <GridPane alignment="CENTER" prefHeight="60.0" prefWidth="107.0" styleClass="notif" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" GridPane.rowSpan="2147483647">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" prefWidth="50.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" prefWidth="90.0" />
+            <ColumnConstraints hgrow="SOMETIMES" prefWidth="50.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="10.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="list" />
+                  <String fx:value="notif" />
+               </styleClass>
+            </ListView>
+            <Label alignment="CENTER" text="Following event will start in 1h:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <styleClass>
+                  <String fx:value="notification" />
+                  <String fx:value="notif" />
+               </styleClass>
+            </Label>
+            <Button mnemonicParsing="false" text="VIEW DETAILS" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <styleClass>
+                  <String fx:value="button-notif" />
+                  <String fx:value="notif" />
+               </styleClass>
+            </Button>
+            <Label alignment="CENTER" text="Výroční běh - prAHA" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <styleClass>
+                  <String fx:value="event" />
+                  <String fx:value="notif" />
+               </styleClass>
+            </Label>
+            <Label alignment="CENTER" text="Klánovice" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <styleClass>
+                  <String fx:value="desc" />
+                  <String fx:value="notif" />
+               </styleClass>
+            </Label>
+            <Label alignment="CENTER" text="15:00" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <styleClass>
+                  <String fx:value="time" />
+                  <String fx:value="notif" />
+               </styleClass>
+            </Label>
+         </children>
+      </GridPane>
+      <HBox alignment="CENTER_LEFT" maxHeight="75.0" prefHeight="50.0" style="-fx-background-color: #d9d9d9;" GridPane.columnSpan="2147483647">
+         <children>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+            <Button id="HOME-button" fx:id="buttonHOME" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="50.0" prefWidth="60.0" styleClass="button-menu" text="HOME">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <graphic>
+                  <ImageView id="HOME-button-icon" fx:id="iconHOME" cache="true" cacheHint="SPEED" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" styleClass="button-menu-image">
+                     <image>
+                        <Image url="@../icons/home_b.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+            <Button id="LOGIN" fx:id="buttonLOGIN" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="button-menu" text="PLANNER">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+            <Button id="EVENTS" fx:id="buttonEVENTS" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="button-menu" text="EVENTS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+            <Button id="NEWS" fx:id="buttonNEWS" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="button-menu" text="NEWS" wrapText="true">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" maxHeight="75.0" prefHeight="50.0" style="-fx-background-color: #d9d9d9;" GridPane.columnIndex="7" GridPane.columnSpan="2">
+         <children>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+            <Button id="ACCOUNT" fx:id="buttonADMIN" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" text="home" HBox.hgrow="NEVER">
+               <graphic>
+                  <ImageView fx:id="iconADMIN" cache="true" cacheHint="SPEED" fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" styleClass="button-menu-image">
+                     <image>
+                        <Image url="@../icons/clock1_w.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="button-menu" />
+                  <String fx:value="pressed" />
+               </styleClass>
+            </Button>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+            <Button id="ACCOUNT" fx:id="buttonADMIN1" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" styleClass="button-menu" text="home">
+               <graphic>
+                  <ImageView fx:id="iconADMIN1" cache="true" cacheHint="SPEED" fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" styleClass="button-menu-image">
+                     <image>
+                        <Image url="@../icons/user_b.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@../styles/planner.css" />
+      <URL value="@../styles/StyleDark.css" />
+   </stylesheets>
+</GridPane>

@@ -3,17 +3,20 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" stylesheets="@../styles/planner.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.planner.main.LoginController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" stylesheets="@../styles/my_events.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.planner.main.LoginController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -60,18 +63,14 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button id="PLANNER-button" alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="8.0" minHeight="38.0" mnemonicParsing="false" prefWidth="400.0" text="CALENDAR" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="12">
+            <Button id="PLANNER-button" alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="8.0" minHeight="38.0" mnemonicParsing="false" prefWidth="400.0" styleClass="button-left-panel" text="CALENDAR" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="12">
                <graphic>
                   <ImageView fx:id="iconCALENDAR" cache="true" cacheHint="SPEED" fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/calendar_w.png" />
+                        <Image url="@../icons/calendar_b.png" />
                      </image>
                   </ImageView>
                </graphic>
-               <styleClass>
-                  <String fx:value="button-left-panel" />
-                  <String fx:value="pressed" />
-               </styleClass>
             </Button>
             <Button id="PLANNER-button" alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="8.0" maxHeight="30.0" minHeight="38.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="400.0" styleClass="button-left-panel" text="ADD EVENT" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="11">
                <graphic>
@@ -82,318 +81,18 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label alignment="CENTER" maxHeight="200.0" prefWidth="200.0" styleClass="label-left-panel" text="MONTH:" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Button id="PLANNER-button" alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="8.0" maxHeight="30.0" minHeight="38.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="400.0" styleClass="button-left-panel" text="MY EVENTS" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="10">
+            <Button id="PLANNER-button" alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="8.0" maxHeight="30.0" minHeight="38.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="400.0" text="MY EVENTS" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="10">
                <graphic>
                   <ImageView fx:id="iconADD1" cache="true" cacheHint="SPEED" fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/clipboard_b.png" />
+                        <Image url="@../icons/clipboard_w.png" />
                      </image>
                   </ImageView>
                </graphic>
-            </Button>
-            <Button id="PLANNER-button" fx:id="monthBACK" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="button-month" text="NEXT" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-               <graphic>
-                  <ImageView fx:id="iconADD11" cache="true" cacheHint="SPEED" fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icons/back_b.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button id="PLANNER-button" fx:id="monthNEXT" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="button-month" text="BACK" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-               <graphic>
-                  <ImageView fx:id="iconADD111" cache="true" cacheHint="SPEED" fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icons/next_b.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Label alignment="CENTER" maxHeight="200.0" prefWidth="200.0" styleClass="label-left-panel" text="YEAR:" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" />
-         </children>
-      </GridPane>
-      <GridPane alignment="CENTER" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" GridPane.rowSpan="2147483647">
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         </rowConstraints>
-         <children>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="1" GridPane.halignment="CENTER">
                <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
+                  <String fx:value="button-left-panel" />
+                  <String fx:value="pressed" />
                </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="2" GridPane.columnIndex="1" GridPane.halignment="CENTER">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="even" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="4" GridPane.columnIndex="3" GridPane.halignment="CENTER">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="even" />
-               </styleClass>
-               <graphic>
-                  <VBox alignment="TOP_CENTER" prefHeight="79.0" prefWidth="79.0">
-                     <children>
-                        <Button alignment="TOP_CENTER" maxHeight="15.0" mnemonicParsing="false" prefWidth="1000.0" text="BUY TICKETS">
-                           <styleClass>
-                              <String fx:value="button-my_events" />
-                              <String fx:value="_6" />
-                           </styleClass>
-                           <VBox.margin>
-                              <Insets bottom="4.0" />
-                           </VBox.margin>
-                        </Button>
-                        <Button alignment="TOP_CENTER" maxHeight="15.0" mnemonicParsing="false" prefWidth="1000.0" text="PICK UP COAT">
-                           <styleClass>
-                              <String fx:value="button-my_events" />
-                              <String fx:value="_5" />
-                           </styleClass>
-                        </Button>
-                     </children>
-                  </VBox>
-               </graphic>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="5" GridPane.columnIndex="4" GridPane.halignment="CENTER">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="6" GridPane.columnIndex="5" GridPane.halignment="CENTER">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="even" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="8" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="even" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="7" GridPane.columnIndex="6" GridPane.halignment="CENTER">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="9" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="10" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="even" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="11" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="12" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="even" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="13" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="14" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="even" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="15" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
-               </styleClass>
-               <graphic>
-                  <VBox alignment="TOP_CENTER" prefHeight="80.0" prefWidth="79.0">
-                     <children>
-                        <Button alignment="TOP_CENTER" maxHeight="15.0" mnemonicParsing="false" prefWidth="1000.0" text="BRUNCH w FRIENDS">
-                           <styleClass>
-                              <String fx:value="button-my_events" />
-                              <String fx:value="_3" />
-                           </styleClass>
-                           <VBox.margin>
-                              <Insets bottom="4.0" />
-                           </VBox.margin>
-                        </Button>
-                        <Button alignment="TOP_CENTER" maxHeight="15.0" mnemonicParsing="false" prefWidth="1000.0" text="DINNER 18:40">
-                           <styleClass>
-                              <String fx:value="button-my_events" />
-                              <String fx:value="_1" />
-                           </styleClass>
-                           <VBox.margin>
-                              <Insets bottom="4.0" />
-                           </VBox.margin>
-                        </Button>
-                        <Button alignment="TOP_CENTER" maxHeight="15.0" mnemonicParsing="false" prefWidth="1000.0" text="PARTY!">
-                           <styleClass>
-                              <String fx:value="button-my_events" />
-                              <String fx:value="_2" />
-                           </styleClass>
-                           <VBox.margin>
-                              <Insets bottom="4.0" />
-                           </VBox.margin>
-                        </Button>
-                     </children>
-                  </VBox>
-               </graphic>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="16" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="even" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="17" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="18" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="even" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="19" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="20" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="even" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="21" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="22" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="even" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="23" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="24" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="even" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="25" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="26" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="even" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="27" GridPane.columnIndex="5" GridPane.rowIndex="3">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="28" GridPane.columnIndex="6" GridPane.rowIndex="3">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="even" />
-               </styleClass>
-               <graphic>
-                  <VBox alignment="TOP_CENTER" prefHeight="79.0" prefWidth="79.0">
-                     <children>
-                        <Button alignment="TOP_CENTER" maxHeight="15.0" mnemonicParsing="false" prefWidth="1000.0" text="FLIGHT">
-                           <styleClass>
-                              <String fx:value="button-my_events" />
-                              <String fx:value="_4" />
-                           </styleClass>
-                           <VBox.margin>
-                              <Insets bottom="4.0" />
-                           </VBox.margin>
-                        </Button>
-                     </children>
-                  </VBox>
-               </graphic>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="29" GridPane.rowIndex="4">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="30" GridPane.columnIndex="1" GridPane.rowIndex="4">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="even" />
-               </styleClass>
-            </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="31" GridPane.columnIndex="2" GridPane.rowIndex="4">
-               <styleClass>
-                  <String fx:value="button-calendar" />
-                  <String fx:value="odd" />
-               </styleClass>
-            </Button>
-            <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="button-calendar-filter" text="FILTER" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
-               <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icons/editing_b.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
             </Button>
          </children>
       </GridPane>
@@ -452,5 +151,66 @@
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
          </children>
       </HBox>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="new_event" stylesheets="@../styles/new_event.css" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" GridPane.rowSpan="2147483647">
+         <children>
+            <Label layoutX="57.0" layoutY="48.0" text="Title:" />
+            <Label layoutX="40.0" layoutY="164.0" text="Location:" />
+            <Label layoutX="46.0" layoutY="248.0" text="Privacy:" />
+            <Button layoutX="285.0" layoutY="469.0" mnemonicParsing="false" prefWidth="100.0" styleClass="back" text="Cancel" />
+            <Button layoutX="160.0" layoutY="469.0" mnemonicParsing="false" prefWidth="100.0" styleClass="save" text="Save" />
+            <Label layoutX="50.0" layoutY="205.0" text="Guests:" />
+            <Label layoutX="57.0" layoutY="303.0" text="Tags:" />
+            <Label layoutX="52.0" layoutY="124.0" text="Time:" />
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="298.0" layoutY="351.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="add" text="Button">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/add_b.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="150.0" layoutY="298.0" mnemonicParsing="false" text="museum night">
+               <styleClass>
+                  <String fx:value="tag" />
+                  <String fx:value="_1" />
+               </styleClass>
+            </Button>
+            <TextField layoutX="174.0" layoutY="43.0" text="Museum NIGHT session" />
+            <TextField layoutX="174.0" layoutY="119.0" prefHeight="31.0" prefWidth="85.0" text="20:00" />
+            <TextField layoutX="174.0" layoutY="159.0" text="Północ" />
+            <Button layoutX="283.0" layoutY="200.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="131.0" styleClass="import" text="Import from csv" />
+            <ToggleButton layoutX="181.0" layoutY="243.0" mnemonicParsing="false" prefWidth="175.0" styleClass="import" text="Public event" />
+            <TextField layoutX="287.0" layoutY="119.0" prefHeight="31.0" prefWidth="85.0" text="22:00" />
+            <Button layoutX="129.0" layoutY="200.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="131.0" styleClass="import" text="Edit" />
+            <Button layoutX="298.0" layoutY="298.0" mnemonicParsing="false" text="free entry">
+               <styleClass>
+                  <String fx:value="tag" />
+                  <String fx:value="_2" />
+               </styleClass>
+            </Button>
+            <Button layoutX="155.0" layoutY="350.0" mnemonicParsing="false" text="kids welcome">
+               <styleClass>
+                  <String fx:value="tag" />
+                  <String fx:value="_3" />
+               </styleClass>
+            </Button>
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="469.0" layoutY="14.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="65.0" text="Button">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/bin.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="rounded-button" />
+                  <String fx:value="remove" />
+               </styleClass>
+            </Button>
+            <Label layoutX="53.0" layoutY="85.0" text="Date:" />
+            <DatePicker layoutX="178.0" layoutY="80.0" prefHeight="31.0" prefWidth="190.0" promptText="Date" />
+         </children>
+      </AnchorPane>
    </children>
 </GridPane>

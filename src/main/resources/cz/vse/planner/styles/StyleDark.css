@@ -98,3 +98,86 @@
     -fx-background-color: black;
     fx-text-fill: black;
 }
+.rounded-button{
+    -fx-background-radius: 50;
+}
+.day-night{
+    -fx-background-color: #fff;
+}
+.admin-panel{
+    -fx-background-color: #7a7b80;
+}
+.admin-panel-button{
+    -fx-background-color: #7a7b80;
+    -fx-text-fill: #fff;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-border-width: 2;
+    -fx-border-color: #fff;
+}
+.button-admin{
+    -fx-background-color: #d9d9d9;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+    -fx-text-fill: #1e2a39;
+    -fx-border-width: 0;
+    -fx-outer-border: transparent;
+    -fx-background-radius: 7;
+}
+.button-admin.events{
+    -fx-background-color: #d59797;
+}
+.button-admin.users{
+    -fx-background-color: #8da5d7;
+}
+.button-admin.inactive{
+     -fx-background-color: grey;
+}
+.button-admin.edit{
+    -fx-background-color: grey;
+    -fx-text-fill: #fff;
+}
+.admin-event-list{
+    -fx-background-color: #d9d9d9;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+    -fx-text-fill: #1e2a39;
+    -fx-border-width: 0;
+    -fx-outer-border: transparent;
+    -fx-background-radius: 7;
+}
+.notif{
+
+}
+.notif.notification{
+    -fx-font-size: 12px;
+    -fx-text-fill: #000;
+    -fx-font-weight: normal ;
+}
+.notif.event{
+    -fx-font-size: 15px;
+    -fx-text-fill: #000;
+    -fx-font-weight: bold;
+}
+.notif.desc{
+    -fx-font-size: 12px;
+    -fx-text-fill: #000;
+    -fx-font-weight: normal;
+}
+.notif.time{
+    -fx-font-size: 20px;
+    -fx-text-fill: #000;
+    -fx-font-weight: bold;
+}
+.notif.button-notif{
+    -fx-background-color: green;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+    -fx-text-fill: white;
+    -fx-border-width: 0;
+    -fx-outer-border: transparent;
+    -fx-background-radius: 8;
+}
