@@ -90,6 +90,49 @@
     -fx-background-radius: 30;
 }
 
+
+/******* EVENTS *****/
+
+.button-event{
+    -fx-background-color: green;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-border-width: 0;
+    -fx-outer-border: transparent;
+    -fx-background-radius: 8;
+}
+.button-event._1{
+    -fx-background-color: #ff0000;
+}
+.button-event._2{
+    -fx-background-color: #ff7f00;
+}
+.button-event._3{
+    -fx-text-fill: #000;
+    -fx-background-color: #ffff00;
+}
+.button-event._4{
+    -fx-background-color: #00ff00;
+    -fx-text-fill: #000;
+}
+.button-event._5{
+    -fx-background-color: #00ffff;
+    -fx-text-fill: #000;
+}
+.button-event._6{
+    -fx-background-color: #0000ff;
+}
+.button-event._7{
+    -fx-background-color: #8b00ff;
+    -fx-text-fill: #000;
+}
+.button-event._8{
+    -fx-background-color: #ff00ff;
+    -fx-text-fill: #000;
+}
+
+
 /******** MENU **********/
 
 .button-menu {
