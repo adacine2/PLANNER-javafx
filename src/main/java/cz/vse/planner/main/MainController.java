@@ -17,16 +17,7 @@ public class MainController {
     private Button buttonHOME;
     @FXML
     private Button buttonLOGIN;
-    @FXML
-    private Button buttonEVENTS;
-    @FXML
-    private Button buttonNEWS;
-    @FXML
-    private Button buttonADMIN;
-    @FXML
-    private ImageView iconHOME;
-    @FXML
-    private ImageView iconADMIN;
+
 
 
     /**

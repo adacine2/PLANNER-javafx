@@ -12,15 +12,15 @@ import java.io.IOException;
 
 public class LoginController {
     @FXML
-    private Button buttonHOME;
+    private Button MenuButtonHome;
     @FXML
-    private Button loginButton1;
+    private Button LoginButtonNext;
     @FXML
-    private void handleLoginButton1() {
+    private void handleLoginButtonNext() {
         showLoginPassword();
     }
     @FXML
-    private void handleHomeButton() {
+    private void handleMenuButtonHome() {
         showHomeScene();
     }
 
@@ -32,7 +32,7 @@ public class LoginController {
             Parent root = fxmlLoader.load();
 
             // Get the current stage from any control (in this case, the HOME button)
-            Stage primaryStage = (Stage) buttonHOME.getScene().getWindow();
+            Stage primaryStage = (Stage) MenuButtonHome.getScene().getWindow();
             // Save the current dimensions of the window
             double currentWidth = primaryStage.getWidth();
             double currentHeight = primaryStage.getHeight();
@@ -49,7 +49,7 @@ public class LoginController {
             FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/login_password.fxml"));
             Parent root1 = fxmlLoader1.load();
 
-            Stage primaryStage1 = (Stage) loginButton1.getScene().getWindow();
+            Stage primaryStage1 = (Stage) LoginButtonNext.getScene().getWindow();
             double currentWidth = primaryStage1.getWidth();
             double currentHeight = primaryStage1.getHeight();
             Scene passwordScene = new Scene(root1, currentWidth, currentHeight);

@@ -53,12 +53,6 @@
     -fx-transition: all 0.5s ease;
 }
 
-.button:hover .button-image {
-    -fx-fill: #ffffff;
-    -fx-transition: all 0.5s ease;
-    -fx-opacity: 0.2;
-}
-
 .button.pressed {
     -fx-background-color: #1e2a39;
     -fx-text-fill: #ffffff;

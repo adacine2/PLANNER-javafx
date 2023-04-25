@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" stylesheets="@../styles/StyleDark.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.planner.main.MainController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" stylesheets="@../styles/Style_Dark.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.planner.main.MainController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -37,48 +37,39 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <VBox id="vbox" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" GridPane.rowSpan="2147483647">
-         <children>
-            <ImageView id="logo-big" cache="true" cacheHint="QUALITY" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../logo/LOGO.png" />
-               </image>
-            </ImageView>
-         </children>
-      </VBox>
-      <HBox alignment="CENTER_LEFT" maxHeight="75.0" prefHeight="50.0" style="-fx-background-color: #d9d9d9;" styleClass="menu-bar" GridPane.columnSpan="5">
+      <HBox alignment="CENTER_LEFT" maxHeight="75.0" prefHeight="50.0" styleClass="menu-bar-" GridPane.columnSpan="5">
          <children>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
-            <Button id="HOME-button" fx:id="buttonHOME" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" text="HOME">
+            <Button id="HOME-button" fx:id="MenuButtonHome" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuButtonHome" prefHeight="50.0" prefWidth="60.0" styleClass="menu-button" text="HOME">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
                <graphic>
-                  <ImageView id="HOME-button-icon" fx:id="iconHOME" cache="true" cacheHint="SPEED" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" styleClass="pressed">
+                  <ImageView id="HOME-button-icon" fx:id="iconHOME1" cache="true" cacheHint="SPEED" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/home_w.png" />
+                        <Image url="@../icons/home_b.png" />
                      </image>
                   </ImageView>
                </graphic>
+            </Button>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+            <Button id="LOGIN-button" fx:id="buttonLOGIN1" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="LOGIN">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
                <styleClass>
-                  <String fx:value="button-menu" />
+                  <String fx:value="menu-button" />
                   <String fx:value="pressed" />
                </styleClass>
             </Button>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
-            <Button id="LOGIN" fx:id="buttonLOGIN" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="button-menu" text="LOGIN">
+            <Button id="EVENTS-button" fx:id="buttonEVENTS1" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="menu-button" text="EVENTS">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
-            <Button id="EVENTS" fx:id="buttonEVENTS" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="button-menu" text="EVENTS">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Button>
-            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
-          <Button id="NEWS" fx:id="buttonNEWS" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="button-menu" text="NEWS" wrapText="true">
+            <Button id="NEWS-button" fx:id="buttonNEWS1" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="menu-button" text="NEWS" wrapText="true">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -86,12 +77,12 @@
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
          </children>
       </HBox>
-      <HBox alignment="CENTER_RIGHT" maxHeight="75.0" prefHeight="50.0" style="-fx-background-color: #d9d9d9;" styleClass="menu-bar" GridPane.columnIndex="5">
+      <HBox alignment="CENTER_RIGHT" maxHeight="75.0" prefHeight="50.0" styleClass="menu-bar-" GridPane.columnIndex="5">
          <children>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
-            <Button id="HOME" fx:id="buttonADMIN" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" styleClass="button-menu" text="home" HBox.hgrow="NEVER">
+            <Button id="ADMIN-button" fx:id="buttonADMIN1" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" styleClass="menu-button" text="home" HBox.hgrow="NEVER">
                <graphic>
-                  <ImageView fx:id="iconADMIN" cache="true" cacheHint="SPEED" fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="iconADMIN1" cache="true" cacheHint="SPEED" fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../icons/admin_gear_b.png" />
                      </image>
@@ -101,5 +92,14 @@
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
          </children>
       </HBox>
+      <VBox id="vbox" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" GridPane.rowSpan="2147483647">
+         <children>
+            <ImageView id="logo-big" cache="true" cacheHint="QUALITY" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../logo/LOGO.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
    </children>
 </GridPane>
