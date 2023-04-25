@@ -1,0 +1,6 @@
+.root{
+    -fx-font-family: helvetica;
+    -fx-text-box-border: transparent;
+    -fx-focus-color: transparent;
+    -fx-border-color: transparent;
+}

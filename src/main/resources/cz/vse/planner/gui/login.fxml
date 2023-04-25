@@ -108,7 +108,7 @@
                </children>
             </HBox>
             <TextField promptText="Email" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1" />
-            <Button fx:id="loginButton1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" minHeight="50.0" minWidth="90.0" mnemonicParsing="false" text="NEXT" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="loginButton1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" minHeight="50.0" minWidth="90.0" mnemonicParsing="false" onAction="#handleLoginButton1" text="NEXT" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <styleClass>
                   <String fx:value="login" />
                   <String fx:value="button" />

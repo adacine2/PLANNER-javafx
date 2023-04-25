@@ -46,7 +46,7 @@
             </ImageView>
          </children>
       </VBox>
-      <HBox alignment="CENTER_LEFT" maxHeight="75.0" prefHeight="50.0" style="-fx-background-color: #d9d9d9;" styleClass="hbox" GridPane.columnSpan="5">
+      <HBox alignment="CENTER_LEFT" maxHeight="75.0" prefHeight="50.0" style="-fx-background-color: #d9d9d9;" styleClass="menu-bar" GridPane.columnSpan="5">
          <children>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
             <Button id="HOME-button" fx:id="buttonHOME" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" text="HOME">
@@ -86,7 +86,7 @@
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
          </children>
       </HBox>
-      <HBox alignment="CENTER_RIGHT" maxHeight="75.0" prefHeight="50.0" style="-fx-background-color: #d9d9d9;" styleClass="hbox" GridPane.columnIndex="5">
+      <HBox alignment="CENTER_RIGHT" maxHeight="75.0" prefHeight="50.0" style="-fx-background-color: #d9d9d9;" styleClass="menu-bar" GridPane.columnIndex="5">
          <children>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
             <Button id="HOME" fx:id="buttonADMIN" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" styleClass="button-menu" text="home" HBox.hgrow="NEVER">
