@@ -52,7 +52,7 @@
                </graphic>
             </Button>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
-            <Button id="LOGIN-button" fx:id="MenuButtonLogin" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuButtonLogin" prefHeight="50.0" prefWidth="100.0" text="LOGIN">
+            <Button id="LOGIN-button" fx:id="MenuButtonLogin" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="LOGIN">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -62,13 +62,13 @@
                </styleClass>
             </Button>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
-            <Button id="EVENTS-button" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="menu-button" text="EVENTS">
+            <Button id="EVENTS-button" fx:id="MenuButtonEvents" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="menu-button" text="EVENTS">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
-            <Button id="NEWS-button" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="menu-button" text="NEWS" wrapText="true">
+            <Button id="NEWS-button" fx:id="MenuButtonNews" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="menu-button" text="NEWS" wrapText="true">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -79,7 +79,7 @@
       <HBox alignment="CENTER_RIGHT" maxHeight="75.0" prefHeight="50.0" styleClass="menu-bar-" GridPane.columnIndex="5" GridPane.columnSpan="2">
          <children>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
-            <Button id="ADMIN-button" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" styleClass="menu-button" text="home" HBox.hgrow="NEVER">
+            <Button id="ADMIN-button" fx:id="MenuButtonAdmin" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" styleClass="menu-button" text="home" HBox.hgrow="NEVER">
                <graphic>
                   <ImageView fx:id="iconADMIN1" cache="true" cacheHint="SPEED" fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                      <image>

@@ -13,6 +13,7 @@ module cz.vse.planner {
     requires eu.hansolo.fx.heatmap;
     requires eu.hansolo.toolboxfx;
     requires eu.hansolo.toolbox;
+    requires java.sql;
 
     opens cz.vse.planner.main to javafx.fxml, javafx.graphics;
     exports cz.vse.planner.main to javafx.fxml, javafx.graphics;

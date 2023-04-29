@@ -14,75 +14,61 @@ import java.io.IOException;
 
 public class MainController {
     @FXML
-    private Button buttonHOME;
+    private Button MenuButtonHome;
     @FXML
-    private Button buttonLOGIN;
+    private Button MenuButtonLogin;
+    @FXML
+    private Button MenuButtonAdmin;
+    @FXML
+    private Button MenuButtonEvents;
+    @FXML
+    private Button MenuButtonNews;
 
 
 
-    /**
-     * --- STORAGE ---
-     * PREVIOUS STYLES AND ICONS
-     */
-    private Button previousButton;
-    private ImageView previousImageView;
-    private String previousIconPath;
-
-
-    public void initialize() {
-        initializeButton(buttonHOME, iconHOME, "/cz/vse/planner/icons/home_w.png", "/cz/vse/planner/icons/home_b.png");
-        initializeButton(buttonLOGIN, null, null, null);
-        initializeButton(buttonEVENTS, null, null, null);
-        initializeButton(buttonNEWS, null, null, null);
-        initializeButton(buttonADMIN, iconADMIN, "/cz/vse/planner/icons/admin_gear_w.png", "/cz/vse/planner/icons/admin_gear_b.png");
+    @FXML
+    private void handleMenuButtonHome() {
+        showHomeScene();
     }
-    private void initializeButton(Button button, ImageView imageView, String iconPath, String originalIconPath) {
-        button.setOnAction(event -> {
-            if (previousButton != null && previousButton != button) {
-                previousButton.getStyleClass().remove("pressed");
+    @FXML
+    private void handleMenuButtonLogin() {
+        showLoginScene();
+    }
 
-                if (previousImageView != null && previousIconPath != null) {
-                    Image originalImage = new Image(getClass().getResourceAsStream(previousIconPath));
-                    previousImageView.setImage(originalImage);
-                }
-            }
 
-            if (previousButton != button) {
-                if (imageView != null && iconPath != null) {
-                    Image newImage = new Image(getClass().getResourceAsStream(iconPath));
-                    imageView.setImage(newImage);
-                }
 
-                button.getStyleClass().add("pressed");
-                previousButton = button;
-                previousImageView = imageView;
-                previousIconPath = originalIconPath;
-            }
+    public void showHomeScene() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/home.fxml"));
+            Parent root = fxmlLoader.load();
 
-            if (button.getId().equals("LOGIN")) {
-                showLoginScene();
-            }
-        });
+            // Get the current stage from any control (in this case, the HOME button)
+            Stage primaryStage = (Stage) MenuButtonHome.getScene().getWindow();
+            // Save the current dimensions of the window
+            double currentWidth = primaryStage.getWidth();
+            double currentHeight = primaryStage.getHeight();
+            Scene homeScene = new Scene(root, currentWidth, currentHeight);
+
+            primaryStage.setScene(homeScene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void showLoginScene() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/login.fxml"));
-            Parent loginParent = fxmlLoader.load();
+            FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/login.fxml"));
+            Parent root1 = fxmlLoader1.load();
 
+            Stage primaryStage1 = (Stage) MenuButtonLogin.getScene().getWindow();
+            double currentWidth = primaryStage1.getWidth();
+            double currentHeight = primaryStage1.getHeight();
+            Scene passwordScene = new Scene(root1, currentWidth, currentHeight);
 
-
-            // Get the current stage from any control (in this case, the LOGIN button)
-            Stage primaryStage = (Stage) buttonLOGIN.getScene().getWindow();
-            // Save the current dimensions of the window
-            double currentWidth = primaryStage.getWidth();
-            double currentHeight = primaryStage.getHeight();
-            Scene loginScene = new Scene(loginParent, currentWidth, currentHeight);
-
-
-            primaryStage.setScene(loginScene);
-        } catch (IOException e) {
-            e.printStackTrace();
+            primaryStage1.setScene(passwordScene);
+        }
+        catch (IOException exception){
+            exception.printStackTrace();
         }
     }
 
