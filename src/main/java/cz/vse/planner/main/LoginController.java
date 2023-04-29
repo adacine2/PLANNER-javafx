@@ -1,7 +1,10 @@
 package cz.vse.planner.main;
+import cz.vse.planner.utils.*;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.stage.Stage;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,25 +13,40 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class LoginController {
+public class LoginController implements Initializable{
     @FXML
     private Button MenuButtonHome;
     @FXML
     private Button LoginButtonNext;
     @FXML
+    private Button MenuButtonLogin;
+    @FXML
+    private Button MenuButtonAdmin;
+    @FXML
+    private Button MenuButtonEvents;
+    @FXML
+    private Button MenuButtonNews;
+
+
+    @FXML
     private TextField LoginEmail;
+
 
     @FXML
     private void handleLoginButtonNext() {
@@ -48,6 +66,23 @@ public class LoginController {
 
     /* stored email as a text */
     private String email;
+
+    /** IMAGE CHANGE ON HOVER
+     * This part of code is used to change the image on hover
+     * necesarry to import the class ChangeTheImage in utils
+     * /utils/*
+     * requires class to implements Initializable
+     */
+    private ChangeTheImage changeTheImage;
+    public void initialize(URL location, ResourceBundle resources) {
+        changeTheImage = new ChangeTheImage();
+        changeTheImage.changeButtonImageOnHover(MenuButtonHome, "home");
+        changeTheImage.changeButtonImageOnHover(MenuButtonAdmin, "admin_gear");
+        changeTheImage.changeButtonImageOnHover(LoginButtonNext, "next");
+    }
+
+
+
 
 
 
@@ -153,4 +188,5 @@ public class LoginController {
             alert.showAndWait();
         }
     }
+
 }

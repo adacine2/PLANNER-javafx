@@ -113,7 +113,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <graphic>
-                  <ImageView id="HOME-button-icon" fx:id="iconHOME11" cache="true" cacheHint="SPEED" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="login-button-icon-next" fx:id="iconHOME11" cache="true" cacheHint="SPEED" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../icons/next_b.png" />
                      </image>

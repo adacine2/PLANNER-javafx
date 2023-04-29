@@ -17,7 +17,7 @@ public class Main extends Application {
         Parent root = loader.load();
 
         Scene scene = new Scene(root, 320, 240);
-        stage.setTitle("PLANNER v0.1.05");
+        stage.setTitle("PLANNER v0.1.06");
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/cz/vse/planner/icons/diary_small_b.png")));
         stage.setScene(scene);
         stage.setMaximized(true);

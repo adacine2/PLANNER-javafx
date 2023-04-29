@@ -1,0 +1,25 @@
+
+    /* button image :hover GPT-3.5 */
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        setButtonHoverImages(LoginButtonNext, "next");
+        setButtonHoverImages(MenuButtonHome, "home");
+        setButtonHoverImages(MenuButtonAdmin, "admin");
+    }
+
+    private void setButtonHoverImages(Button button, String name) {
+        Image buttonImage = new Image("/icons/" + name + "_b.png");
+        Image hoverImage = new Image("/icons/" + name + "_w.png");
+        ImageView buttonImageView = new ImageView(buttonImage);
+        button.setGraphic(buttonImageView);
+        button.setOnMouseEntered(e -> buttonImageView.setImage(hoverImage));
+        button.setOnMouseExited(e -> buttonImageView.setImage(buttonImage));
+    }
+
+
+        public void initialize(URL location, ResourceBundle resources) {
+            System.out.println("Controller initialized!");
+            changeButtonImageOnHover(MenuButtonHome, "home");
+            changeButtonImageOnHover(LoginButtonNext, "next");
+            changeButtonImageOnHover(MenuButtonAdmin, "admin_gear");
+        }

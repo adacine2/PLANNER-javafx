@@ -19,4 +19,6 @@ module cz.vse.planner {
     exports cz.vse.planner.main to javafx.fxml, javafx.graphics;
     opens cz.vse.planner to javafx.fxml;
     exports cz.vse.planner;
+    exports cz.vse.planner.utils;
+    opens cz.vse.planner.utils to javafx.fxml;
 }

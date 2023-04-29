@@ -53,12 +53,20 @@
     -fx-background-radius: 5;
     -fx-padding: 0;
 }
-.login-button:hover{
+.login-button.next:hover{
     -fx-background-color: green;
+    -fx-text-fill: #fff;
+}
+.login-button.back:hover{
+    -fx-background-color: darkred;
     -fx-text-fill: #fff;
 }
 .login-button.next.pressed{
     -fx-background-color: green;
+    -fx-text-fill: #fff;
+}
+.login-button.back.pressed{
+    -fx-background-color: darkred;
     -fx-text-fill: #fff;
 }
 .login-label{
