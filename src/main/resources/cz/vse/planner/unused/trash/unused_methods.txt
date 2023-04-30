@@ -23,3 +23,68 @@
             changeButtonImageOnHover(LoginButtonNext, "next");
             changeButtonImageOnHover(MenuButtonAdmin, "admin_gear");
         }
+
+
+
+    SEND EMAIL - Google API - OAuth 2.0
+
+
+
+
+
+    private static final String APPLICATION_NAME = "My-Planner-email-API";
+    private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
+    private static final String CLIENT_SECRET_FILE = "D:/CODDING/VSE/PLANNER/src/main/resources/cz/vse/planner/utils/client_secret_990886173339-vqikosps85pkpre0a5hjk8po05jii2nk.apps.googleusercontent.com.json";
+    private static final String USER_ID = "me";
+    private static final String[] SCOPES = {"https://www.googleapis.com/auth/gmail.send"};
+    private static final java.io.File DATA_STORE_DIR = new java.io.File(System.getProperty("user.home"), ".credentials/my-planner-email-api");
+
+
+    private static Credential authorize() throws IOException, GeneralSecurityException {
+        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new FileReader(CLIENT_SECRET_FILE));
+        FileDataStoreFactory dataStoreFactory = new FileDataStoreFactory(DATA_STORE_DIR);
+        GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
+                GoogleNetHttpTransport.newTrustedTransport(), JSON_FACTORY, clientSecrets, Collections.singletonList(SCOPES[0]))
+                .setAccessType("offline")
+                .setDataStoreFactory(dataStoreFactory)
+                .build();
+        return new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver.Builder().setPort(8080).setCallbackPath("/callback").build()).authorize(USER_ID);
+    }
+
+    private static Gmail getGmailService() throws IOException, GeneralSecurityException {
+        Credential credential = authorize();
+        return new Gmail.Builder(GoogleNetHttpTransport.newTrustedTransport(), JSON_FACTORY, credential)
+                .setApplicationName(APPLICATION_NAME)
+                .build();
+    }
+
+    private static Message createMessageWithEmail(MimeMessage emailContent) throws javax.mail.MessagingException, IOException {
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        emailContent.writeTo(buffer);
+        byte[] bytes = buffer.toByteArray();
+        String encodedEmail = com.google.api.client.util.Base64.encodeBase64URLSafeString(bytes);
+        Message message = new Message();
+        message.setRaw(encodedEmail);
+        return message;
+    }
+
+    public static void sendEmail(String to, String password) {
+        try {
+            Gmail service = getGmailService();
+
+            MimeMessage email = new MimeMessage(javax.mail.Session.getDefaultInstance(new Properties(), null));
+            email.setFrom(new javax.mail.internet.InternetAddress("myplannerappka@gmail.com"));
+            email.addRecipient(javax.mail.Message.RecipientType.TO, new javax.mail.internet.InternetAddress(to));
+            email.setSubject("Your Password");
+            email.setText("Your password is: " + password);
+
+            Message message = createMessageWithEmail(email);
+            service.users().messages().send(USER_ID, message).execute();
+        } catch (MessagingException | IOException | GeneralSecurityException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    SMTP Google Web App password
+    qevmmceddlmyupiy

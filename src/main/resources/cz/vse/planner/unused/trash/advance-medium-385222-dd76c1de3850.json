@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "advance-medium-385222",
+  "private_key_id": "dd76c1de3850ecee291d54f68651b3f244d1c483",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDQhKbSeFsqe0BR\nSW0/p7c9XwCmaBzxBL50T7XH6PTouOZdXH56agBXLzM8K+sXeJVR3iEGuE7Cnz0J\n9v+0c1HnEAs51Pp2g4n0r/XKQxAZomhFoZRGBZ3Yz0FqLD/EL9ANNbhrDGRl6Qyb\nYRBmSDIxS6KZ6QAUDGKG5zxTmu8PjL3lhBH0UxaumXBB45vEeFkZII3iHDofV8LI\nV2NHkhST7fPXq+hbpJvM5BVaLgTHAaYAJGtcd7DehfjSTGHSktJ4cmbR5M+XADsR\naLTb+ncAmROBGuanSe2cpOYVZlvgQwlKINVhvePgJwthzHv0v/tz1emtJrUVus5R\n69tCcmDrAgMBAAECggEAPqj+MJU2YCe1hjfYep59tBWObnMu70aLrQwfBjn9Dsox\nf7DB2SttesWWUeiott7nkDh+GDTehiGwCASPhrx4ykTJ+tEDiwWwOTV/WQ6aEfn5\n96K8meYqLvLpJ2ywpNXxYWbZSmHo8a78uNyMPxBG9QVTkYixG1U1bnCickVGvZb0\nYPGIK6luqXzZwP0JnN++Klhzp3Y5w5+cNABQX9nNVcjKYV7AXzarZfc2x6XlTkrx\nrvLkZpOzNrkpjqaF4MxXn1SRiVkwZPvgE+5TqStqCAmKzUGbnOlypabCEjPDBARJ\n7QquL4bbVlt9XxM250gZa1szzO3OKFt8ALvCSkTSgQKBgQD5GidrOwoT+p2CA5iv\nG0xgLQtpWtS1BxPg2GM/9EZokx3hpnzIvpcE9uul1dyO/lqMFZELr6Ul93LjEMOa\nIG6rzP0AHPOmil0xp+s18eENMKRO4Q6pQTA7i2iJxvAaZpY1AlgbBxT8IFVkmBgV\nefKCJgWKILjgFve0Xgaeao6HSwKBgQDWSs3bZ92IFeyMwPkgrvpG8LppFe5A7jwj\nMl8JMgrKw49258cVcuWst7oioVlTNE5lrNl437LhSac3c5eKOFAU8YvMzRWjeHja\nxkwG/kkahrnYohIAAue1JZLifpYCWwhk44C5Y7guQ/RwpzlaaQh6yvwwwDjBppUU\npXaal0Vo4QKBgQDockpkWpRd7le6MebxR7Tubjoe1r50KqWXA/Uhga2N+fJBVZ1N\nqeO8ozlj53vIB3uxCpLt57phAlY3orYUBb2gHUndKCcIukaahooLLamHKGO6o3KN\n6CG8/qrPHk+BI0d5MbXLisE/QGDO3MpkiAYPArHaogxCN8xvh+n/O4nCnwKBgCrB\nehlQu+6vESd0SUCwKNeGqGrXKVZjMjSDlFqtVWHnavR6gkpRRmoTrlvCfaQQR6QZ\nvLpVR8eTfn2d3pqBadkD6LTQJoUbQGHGNt0eV0+nmeUTUSwXaEvIV2pBf4SwzRf0\nHHbg4pq4jEj91H+pfTuizHado7Vfm1cnPGbTz9GBAoGBAJRrf69F2a4Pb7rElr/D\nUEXAtuSzb3YEuIP39mwGhShq2diVivrzDPMqRJ5e8ChLvhwXRJkd9FoiWPVKIS05\nvs5HG+gLwzY6of1QsV2+dI1vgOw70BHSN7jkZi8KcSYDXInjgxfFNiO4Db8xD6Q/\nTMrnF1EIItnSj7dr6/ps50OY\n-----END PRIVATE KEY-----\n",
+  "client_email": "my-planner@advance-medium-385222.iam.gserviceaccount.com",
+  "client_id": "104817768843221961767",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/my-planner%40advance-medium-385222.iam.gserviceaccount.com"
+}

@@ -8,11 +8,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+
+
 
 
 public class Login_PasswordController implements Initializable {
@@ -26,6 +31,9 @@ public class Login_PasswordController implements Initializable {
     private Button MenuButtonLogin;
     @FXML
     private Button MenuButtonAdmin;
+    @FXML
+    private PasswordField LoginPassword;
+
     @FXML
     private void handleLoginButtonNext() {
         showMyEvents();
@@ -43,6 +51,17 @@ public class Login_PasswordController implements Initializable {
         showHomeScene();
     }
 
+    private EmailManager emailManager;
+    private String userEmail;
+    private static Alert alertError = new Alert(Alert.AlertType.ERROR);
+
+
+    public Login_PasswordController() {
+        emailManager = new EmailManager();
+        userEmail = emailManager.getLoginEmail();
+    }
+
+
     /** IMAGE CHANGE ON HOVER
      * This part of code is used to change the image on hover
      * necesarry to import the class ChangeTheImage in utils
@@ -51,6 +70,8 @@ public class Login_PasswordController implements Initializable {
      */
     private ChangeTheImage changeTheImage;
     public void initialize(URL location, ResourceBundle resources) {
+        emailManager = new EmailManager();
+        userEmail = emailManager.getLoginEmail();
         changeTheImage = new ChangeTheImage();
         changeTheImage.changeButtonImageOnHover(MenuButtonHome, "home");
         changeTheImage.changeButtonImageOnHover(MenuButtonAdmin, "admin_gear");
@@ -79,19 +100,34 @@ public class Login_PasswordController implements Initializable {
     }
 
     private void showMyEvents() {
-        try {
-            FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/my_events.fxml"));
-            Parent root1 = fxmlLoader1.load();
+        String enteredPassword = LoginPassword.getText();
+        String storedPassword = PasswordManager.getPasswordFromDB("adam.eger@seznam.cz");
+        boolean passwordMatches = PasswordManager.checkInsertedPassword(enteredPassword, storedPassword);
 
-            Stage primaryStage1 = (Stage) LoginButtonNext.getScene().getWindow();
-            double currentWidth = primaryStage1.getWidth();
-            double currentHeight = primaryStage1.getHeight();
-            Scene passwordScene = new Scene(root1, currentWidth, currentHeight);
 
-            primaryStage1.setScene(passwordScene);
-        }
-        catch (IOException exception){
-            exception.printStackTrace();
+        System.out.println("Entered password: " + enteredPassword);
+        System.out.println("Stored password: " + storedPassword);
+        System.out.println("Password matches: " + passwordMatches);
+        if (passwordMatches) {
+            try {
+                FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/my_events.fxml"));
+                Parent root1 = fxmlLoader1.load();
+
+                Stage primaryStage1 = (Stage) LoginButtonNext.getScene().getWindow();
+                double currentWidth = primaryStage1.getWidth();
+                double currentHeight = primaryStage1.getHeight();
+                Scene passwordScene = new Scene(root1, currentWidth, currentHeight);
+
+                primaryStage1.setScene(passwordScene);
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
+        } else {
+            // Show an alert if the password is incorrect
+            alertError.setTitle("Incorrect Password");
+            alertError.setHeaderText(null);
+            alertError.setContentText("The entered password is incorrect. Please try again.");
+            alertError.showAndWait();
         }
     }
 

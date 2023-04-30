@@ -14,6 +14,20 @@ module cz.vse.planner {
     requires eu.hansolo.toolboxfx;
     requires eu.hansolo.toolbox;
     requires java.sql;
+    requires jbcrypt;
+    requires javax.mail.api;
+    requires jdk.httpserver;
+
+    requires com.google.api.client;
+    requires com.google.api.client.auth;
+    requires com.google.api.client.extensions.java6.auth;
+    requires com.google.api.client.extensions.jetty.auth;
+    requires google.api.client;
+    requires google.api.services.gmail.v1.rev110;
+    requires com.google.api.client.json.gson;
+    requires com.google.api.client.http.apache.v2;
+    requires google.http.client.jackson2;
+
 
     opens cz.vse.planner.main to javafx.fxml, javafx.graphics;
     exports cz.vse.planner.main to javafx.fxml, javafx.graphics;

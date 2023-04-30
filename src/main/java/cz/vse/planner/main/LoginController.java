@@ -20,14 +20,19 @@ import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Base64;
+import java.util.Properties;
+
+import java.security.SecureRandom;
+import javax.mail.*;
+import javax.mail.internet.*;
+import org.mindrot.jbcrypt.BCrypt;
+
 
 public class LoginController implements Initializable{
     @FXML
@@ -42,8 +47,6 @@ public class LoginController implements Initializable{
     private Button MenuButtonEvents;
     @FXML
     private Button MenuButtonNews;
-
-
     @FXML
     private TextField LoginEmail;
 
@@ -62,10 +65,19 @@ public class LoginController implements Initializable{
     }
 
     /* ALERT - EMAIL is not valid */
-    private static Alert alert = new Alert(Alert.AlertType.ERROR);
+    private static Alert alertError = new Alert(Alert.AlertType.ERROR);
+    /* ALERT - PASSWORD has been sent */
+    private static Alert alertEmail = new Alert(Alert.AlertType.ERROR);
+    private EmailManager emailManager = new EmailManager();
 
-    /* stored email as a text */
-    private String email;
+    private void storeLoginEmail() {
+        String email = LoginEmail.getText();
+        emailManager.setLoginEmail(email);
+    }
+
+
+
+
 
     /** IMAGE CHANGE ON HOVER
      * This part of code is used to change the image on hover
@@ -80,9 +92,6 @@ public class LoginController implements Initializable{
         changeTheImage.changeButtonImageOnHover(MenuButtonAdmin, "admin_gear");
         changeTheImage.changeButtonImageOnHover(LoginButtonNext, "next");
     }
-
-
-
 
 
 
@@ -104,32 +113,9 @@ public class LoginController implements Initializable{
         }
     }
 
-    /**
-     * Stores the email as a text into variable email
-     */
-    private void storeLoginEmail() {
-        email = LoginEmail.getText();
-    }
 
     /**
-     * Returns the email as a text
-     * @return email
-     */
-    public String getLoginEmail() {
-        return email;
-    }
-    /**
-     * Setter for the email as a text
-     * @param email
-     * @return "new" email
-     */
-    public String setLoginEmail(String email) {
-        return this.email = email;
-    }
-
-
-    /**
-     * Checks if the email is valid
+     * Checks if the useremail is valid
      * @param email
      * @return
      */
@@ -147,25 +133,50 @@ public class LoginController implements Initializable{
      */
     private void showLoginPassword() {
         String email = LoginEmail.getText();
+        storeLoginEmail();
         if (checkLoginEmail(email)) {
             try {
-                // Connect to the SQL database
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "root", "password");
 
-                // Prepare the INSERT statement
-                String sql = "INSERT INTO users (email) VALUES (?)";
+                Connection conn = DBManager.getConnection();
+                String sql = "SELECT email FROM users WHERE email=?";
                 PreparedStatement pstmt = conn.prepareStatement(sql);
                 pstmt.setString(1, email);
+                ResultSet rs = pstmt.executeQuery();
 
-                // Execute the INSERT statement
-                pstmt.executeUpdate();
+                if (!rs.next()){
+                    // Generate a random password
+                    String plainTextPassword = PasswordManager.generateRandomPassword(8);
+
+                    // Hash the password using bcrypt
+                    String hashedPassword = BCrypt.hashpw(plainTextPassword, BCrypt.gensalt());
+
+                    // Prepare the INSERT statement
+                    String insertSql = "INSERT INTO users (email, password) VALUES (?, ?)";
+                    PreparedStatement insertPstmt = conn.prepareStatement(insertSql);
+                    insertPstmt.setString(1, email);
+                    insertPstmt.setString(2, hashedPassword);
+                    // Execute the INSERT statement
+                    insertPstmt.executeUpdate();
+                    // Close the statement
+                    insertPstmt.close();
+                    // Send the plain text password to the user's useremail
+                    EmailManager.sendEmail(email,"Your password is:", plainTextPassword);
+
+                    //Inform user that useremail was sent
+                    alertEmail.setTitle("Succes");
+                    alertEmail.setHeaderText("ACCOUNT CREATED");
+                    alertEmail.setContentText("Mail with password was sent to your useremail.");
+                    alertEmail.showAndWait();
+                }
 
                 // Close the connection and statement
+                rs.close();
                 pstmt.close();
                 conn.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+
             try {
                 FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/login_password.fxml"));
                 Parent root1 = fxmlLoader1.load();
@@ -176,16 +187,14 @@ public class LoginController implements Initializable{
                 Scene passwordScene = new Scene(root1, currentWidth, currentHeight);
 
                 primaryStage1.setScene(passwordScene);
-            }
-            catch (IOException exception){
+            } catch (IOException exception) {
                 exception.printStackTrace();
             }
-        }
-        else {
-            alert.setTitle("Error");
-            alert.setHeaderText("Invalid email");
-            alert.setContentText("The email entered is not valid.");
-            alert.showAndWait();
+        } else {
+            alertError.setTitle("Error");
+            alertError.setHeaderText("INVALID EMAIL");
+            alertError.setContentText("The useremail entered is not valid.");
+            alertError.showAndWait();
         }
     }
 
