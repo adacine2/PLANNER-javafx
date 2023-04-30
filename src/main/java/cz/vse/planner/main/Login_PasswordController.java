@@ -51,15 +51,7 @@ public class Login_PasswordController implements Initializable {
         showHomeScene();
     }
 
-    private EmailManager emailManager;
-    private String userEmail;
     private static Alert alertError = new Alert(Alert.AlertType.ERROR);
-
-
-    public Login_PasswordController() {
-        emailManager = new EmailManager();
-        userEmail = emailManager.getLoginEmail();
-    }
 
 
     /** IMAGE CHANGE ON HOVER
@@ -70,8 +62,6 @@ public class Login_PasswordController implements Initializable {
      */
     private ChangeTheImage changeTheImage;
     public void initialize(URL location, ResourceBundle resources) {
-        emailManager = new EmailManager();
-        userEmail = emailManager.getLoginEmail();
         changeTheImage = new ChangeTheImage();
         changeTheImage.changeButtonImageOnHover(MenuButtonHome, "home");
         changeTheImage.changeButtonImageOnHover(MenuButtonAdmin, "admin_gear");
@@ -101,7 +91,7 @@ public class Login_PasswordController implements Initializable {
 
     private void showMyEvents() {
         String enteredPassword = LoginPassword.getText();
-        String storedPassword = PasswordManager.getPasswordFromDB("adam.eger@seznam.cz");
+        String storedPassword = PasswordManager.getPasswordFromDB(EmailManager.getLoginEmail());
         boolean passwordMatches = PasswordManager.checkInsertedPassword(enteredPassword, storedPassword);
 
 

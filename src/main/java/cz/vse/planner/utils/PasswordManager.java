@@ -16,7 +16,7 @@ public class PasswordManager {
      * @return The generated random password.
      */
     public static String generateRandomPassword(int length) {
-        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#$_";
+        String characters = "a";
         SecureRandom random = new SecureRandom();
         StringBuilder password = new StringBuilder();
 
@@ -59,7 +59,7 @@ public class PasswordManager {
             PreparedStatement pstmt = con.prepareStatement(query);
             pstmt.setString(1, email);
             ResultSet rs = pstmt.executeQuery();
-
+            System.out.println("email je: "+ email);
             if (rs.next()) {
                 password = rs.getString("password");
             }

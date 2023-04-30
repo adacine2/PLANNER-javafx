@@ -70,10 +70,6 @@ public class LoginController implements Initializable{
     private static Alert alertEmail = new Alert(Alert.AlertType.ERROR);
     private EmailManager emailManager = new EmailManager();
 
-    private void storeLoginEmail() {
-        String email = LoginEmail.getText();
-        emailManager.setLoginEmail(email);
-    }
 
 
 
@@ -133,7 +129,7 @@ public class LoginController implements Initializable{
      */
     private void showLoginPassword() {
         String email = LoginEmail.getText();
-        storeLoginEmail();
+        emailManager.setLoginEmail(email);
         if (checkLoginEmail(email)) {
             try {
 
@@ -142,10 +138,10 @@ public class LoginController implements Initializable{
                 PreparedStatement pstmt = conn.prepareStatement(sql);
                 pstmt.setString(1, email);
                 ResultSet rs = pstmt.executeQuery();
-
+                System.out.println("lokal email "+email);
                 if (!rs.next()){
                     // Generate a random password
-                    String plainTextPassword = PasswordManager.generateRandomPassword(8);
+                    String plainTextPassword = PasswordManager.generateRandomPassword(4);
 
                     // Hash the password using bcrypt
                     String hashedPassword = BCrypt.hashpw(plainTextPassword, BCrypt.gensalt());

@@ -7,7 +7,7 @@ import java.util.Properties;
 public class EmailManager {
 
     /* stored useremail as a text */
-    private String useremail;
+    private static String useremail;
 
     public static void sendEmail(String to, String subject, String body) {
         String from = "myplannerappka@gmail.com"; // Your Gmail address
@@ -45,7 +45,7 @@ public class EmailManager {
      * Returns the useremail as a text
      * @return useremail
      */
-    public String getLoginEmail() {
+    public static String getLoginEmail() {
         return useremail;
     }
     /**
@@ -54,7 +54,8 @@ public class EmailManager {
      * @return "new" useremail
      */
     public void setLoginEmail(String email) {
-        return this.useremail = email;
+        System.out.println("kokotina "+email);
+        this.useremail = email;
     }
 
 
