@@ -24,6 +24,8 @@ public class MainController implements Initializable {
     @FXML
     private Button MenuButtonAdmin;
     @FXML
+    private Button MenuButtonNotif;
+    @FXML
     private Button MenuButtonEvents;
     @FXML
     private Button MenuButtonNews;
@@ -49,6 +51,7 @@ public class MainController implements Initializable {
         changeTheImage = new ChangeTheImage();
         changeTheImage.changeButtonImageOnHover(MenuButtonHome, "home");
         changeTheImage.changeButtonImageOnHover(MenuButtonAdmin, "admin_gear");
+        changeTheImage.changeButtonImageOnHover(MenuButtonNotif, "bell");
     }
 
 

@@ -13,7 +13,7 @@ public class ChangeTheImage {
      * @param imageName
      */
     public void changeButtonImageOnHover(Button button, String imageName) {
-        ImageView imageView = (ImageView) button.getGraphic();
+        ImageView imageView = (ImageView)button.getGraphic();
         Image inactiveImage = createImage(imageName + "_b.png", imageView.getBoundsInParent().getWidth(), imageView.getBoundsInParent().getHeight());
         Image activeImage = createImage(imageName + "_w.png", imageView.getBoundsInParent().getWidth(), imageView.getBoundsInParent().getHeight());
 

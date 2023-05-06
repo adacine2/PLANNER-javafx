@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="kindle.xsd">
+    <ebookReader>
+        <name>Elektronická čtečka knih</name>
+        <display description="podsvícený dotykový E Ink displej" size="6&quot;" resolution="1072x1448"/>
+        <connectivity connectivity="WiFi and Bluetooth" connector="USB-C"/>
+        <memory internalMemory="15,625 GB" card="bez paměťové karty"/>
+        <battery capacity="1040" unit="mAh" />
+    </ebookReader>
+    <ebookReader>
+        <name>Elektronická čtečka knih</name>
+        <display description="podsvícený dotykový E Ink displej" size="7.8&quot;" resolution="1872x1404"/>
+        <connectivity connectivity="WiFi" connector="microUSB"/>
+        <memory internalMemory="8 GB" card="micro SD paměťová karta"/>
+        <battery capacity="1900" unit="mAh"/>
+    </ebookReader>
+    <ebookReader>
+        <name>Elektronická čtečka knih</name>
+        <display description="podsvícený dotykový E Ink displej" size="7.8&quot;" type="QHD" resolution="1872x1404"/>
+        <connectivity connectivity="WiFi and Bluetooth" connector="USB-C" other_connectors="konektor jack (sluchátka)"/>
+        <memory internalMemory="32 GB"/>
+        <battery capacity="2000" unit="mAh"/>
+    </ebookReader>
+    <ebookReader>
+        <name>Elektronická čtečka knih</name>
+        <display description="podsvícený dotykový E Ink displej" size="10.3&quot;"/>
+        <connectivity connectivity="WiFi and Bluetooth" connector="USB-C"/>
+        <memory internalMemory="128 GB" card="micro SD a micro SDHC paměťová karta"/>
+        <battery capacity="6300" unit="mAh"/>
+    </ebookReader>
+</Shop>

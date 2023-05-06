@@ -27,30 +27,7 @@ public class PasswordManager {
 
         return password.toString();
     }
-/*
-    public static String getPasswordFromDB(String userEmail) {
-        String query = "SELECT password FROM users WHERE email = 'adam.eger@seznam.cz';";
-        System.out.println("SQL Query: " + query.replace("?", "'" + userEmail + "'"));
-        String storedPassword = null;
 
-        try (Connection connection = DBManager.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-
-            preparedStatement.setString(1, userEmail);
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            if (resultSet.next()) {
-                storedPassword = resultSet.getString("password");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Get the password from DB:" + storedPassword);
-        System.out.println("User Email: " + userEmail);
-        return storedPassword;
-    }
-*/
     public static String getPasswordFromDB(String email) {
         String password = null;
         try {

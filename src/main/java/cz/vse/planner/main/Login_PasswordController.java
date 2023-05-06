@@ -30,6 +30,8 @@ public class Login_PasswordController implements Initializable {
     @FXML
     private Button MenuButtonLogin;
     @FXML
+    private Button MenuButtonNotif;
+    @FXML
     private Button MenuButtonAdmin;
     @FXML
     private PasswordField LoginPassword;
@@ -67,6 +69,7 @@ public class Login_PasswordController implements Initializable {
         changeTheImage.changeButtonImageOnHover(MenuButtonAdmin, "admin_gear");
         changeTheImage.changeButtonImageOnHover(LoginButtonNext, "next");
         changeTheImage.changeButtonImageOnHover(LoginButtonBack, "back");
+        changeTheImage.changeButtonImageOnHover(MenuButtonNotif, "bell");
     }
 
 

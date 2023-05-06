@@ -1,21 +1,17 @@
 package cz.vse.planner.main;
 import cz.vse.planner.utils.*;
+import cz.vse.planner.repo.*;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
@@ -25,13 +21,10 @@ import java.sql.*;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.Base64;
-import java.util.Properties;
 
-import java.security.SecureRandom;
-import javax.mail.*;
-import javax.mail.internet.*;
 import org.mindrot.jbcrypt.BCrypt;
+import org.springframework.beans.factory.annotation.Autowired;
+
 
 
 public class LoginController implements Initializable{
@@ -41,6 +34,8 @@ public class LoginController implements Initializable{
     private Button LoginButtonNext;
     @FXML
     private Button MenuButtonLogin;
+    @FXML
+    private Button MenuButtonNotif;
     @FXML
     private Button MenuButtonAdmin;
     @FXML
@@ -65,10 +60,16 @@ public class LoginController implements Initializable{
     }
 
     /* ALERT - EMAIL is not valid */
+
     private static Alert alertError = new Alert(Alert.AlertType.ERROR);
+    private ImageView alertErrorIcon = new ImageView(new Image(getClass().getResourceAsStream("/cz/vse/planner/icons/invalid_email_w.png")));
     /* ALERT - PASSWORD has been sent */
     private static Alert alertEmail = new Alert(Alert.AlertType.ERROR);
+    private ImageView alertEmailIcon = new ImageView(new Image(getClass().getResourceAsStream("/cz/vse/planner/icons/sent_email_w.png")));
     private EmailManager emailManager = new EmailManager();
+
+    @Autowired
+    private UserRepo userRepository;
 
 
 
@@ -87,6 +88,7 @@ public class LoginController implements Initializable{
         changeTheImage.changeButtonImageOnHover(MenuButtonHome, "home");
         changeTheImage.changeButtonImageOnHover(MenuButtonAdmin, "admin_gear");
         changeTheImage.changeButtonImageOnHover(LoginButtonNext, "next");
+        changeTheImage.changeButtonImageOnHover(MenuButtonNotif, "bell");
     }
 
 
@@ -138,7 +140,7 @@ public class LoginController implements Initializable{
                 PreparedStatement pstmt = conn.prepareStatement(sql);
                 pstmt.setString(1, email);
                 ResultSet rs = pstmt.executeQuery();
-                System.out.println("lokal email "+email);
+                System.out.println("Lokal email: "+email);
                 if (!rs.next()){
                     // Generate a random password
                     String plainTextPassword = PasswordManager.generateRandomPassword(4);
@@ -155,13 +157,23 @@ public class LoginController implements Initializable{
                     insertPstmt.executeUpdate();
                     // Close the statement
                     insertPstmt.close();
-                    // Send the plain text password to the user's useremail
+                    // Send the plain text password to the user's email
                     EmailManager.sendEmail(email,"Your password is:", plainTextPassword);
 
+
+
                     //Inform user that useremail was sent
+                    alertEmailIcon.setFitWidth(50);
+                    alertEmailIcon.setFitHeight(50);
+                    alertEmailIcon.setPreserveRatio(true);
+
                     alertEmail.setTitle("Succes");
                     alertEmail.setHeaderText("ACCOUNT CREATED");
-                    alertEmail.setContentText("Mail with password was sent to your useremail.");
+                    alertEmail.setContentText("Mail with password was sent to your email.");
+                    ((Button) alertEmail.getDialogPane().lookupButton(ButtonType.OK)).setText("AMAZING!");
+                    alertEmail.getDialogPane().getStylesheets().add(getClass().getResource("/cz/vse/planner/styles/Style_Dark.css").toExternalForm());
+                    alertEmail.getDialogPane().getStyleClass().add("alert-success");
+                    alertEmail.getDialogPane().setGraphic(alertEmailIcon);
                     alertEmail.showAndWait();
                 }
 
@@ -187,10 +199,23 @@ public class LoginController implements Initializable{
                 exception.printStackTrace();
             }
         } else {
+
+            alertErrorIcon.setFitWidth(50);
+            alertErrorIcon.setFitHeight(50);
+            alertErrorIcon.setPreserveRatio(true);
+
             alertError.setTitle("Error");
-            alertError.setHeaderText("INVALID EMAIL");
-            alertError.setContentText("The useremail entered is not valid.");
-            alertError.showAndWait();
+            alertError.setHeaderText("INVALID EMAIL ADDRESS");
+            alertError.setContentText("Entered email address is not valid!");
+            ((Button) alertEmail.getDialogPane().lookupButton(ButtonType.OK)).setText("OH NO!");
+            alertError.getDialogPane().getStylesheets().add(getClass().getResource("/cz/vse/planner/styles/Style_Dark.css").toExternalForm());
+            alertError.getDialogPane().getStyleClass().add("alert-error");
+            alertError.getDialogPane().setGraphic(alertErrorIcon);
+            alertError.show();
+
+
+
+
         }
     }
 

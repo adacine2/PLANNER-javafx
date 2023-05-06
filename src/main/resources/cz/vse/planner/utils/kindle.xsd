@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:element name="Shop">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ebookReader" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+
+
+    <xs:element name="ebookReader" type="ebookReaderType"/>
+
+    <xs:complexType name="ebookReaderType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="display" type="displayType"/>
+            <xs:element name="connectivity" type="connectivityType"/>
+            <xs:element name="memory" type="memoryType"/>
+            <xs:element name="battery" type="batteryType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="displayType">
+        <xs:attribute name="description" type="xs:string" use="optional"/>
+        <xs:attribute name="size" type="SizeType"/>
+        <xs:attribute name="type" type="xs:string"/>
+        <xs:attribute name="resolution" type="ResType" use="optional"/>
+    </xs:complexType>
+
+    <xs:simpleType name="SizeType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{1,2}(\.\d{1,2})?(\&quot;|'')"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ResType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3,4}x\d{3,4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="connectivityType">
+        <xs:attribute name="connectivity" type="xs:string"/>
+        <xs:attribute name="connector" type="ConnectorType"/>
+        <xs:attribute name="other_connectors" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <xs:simpleType name="ConnectorType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="miniUSB"/>
+            <xs:enumeration value="microUSB"/>
+            <xs:enumeration value="USB-C"/>
+            <xs:enumeration value="Lightning"/>
+            <xs:enumeration value="Other"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="memoryType">
+        <xs:attribute name="internalMemory" type="IntMemoryType"/>
+        <xs:attribute name="card" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:simpleType name="IntMemoryType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(\d{1,3}(,\d{3})*(\.\d{1,2})?|\d{1,3}\.\d{1,2})\s*[gG][bB]\s*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="batteryType">
+        <xs:attribute name="capacity" type="xs:integer"/>
+        <xs:attribute name="unit" type="UnitType"/>
+    </xs:complexType>
+
+    <xs:simpleType name="UnitType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mAh"/>
+            <xs:enumeration value="Wh"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+</xs:schema>

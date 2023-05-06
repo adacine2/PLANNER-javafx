@@ -7,6 +7,102 @@
     -fx-padding: 0em ;
 }
 
+/************************  GENERAL ***************************/
+/*ERROR*/
+.alert-error.dialog-pane {
+    -fx-background-color: #1a2c3b;
+    -fx-border-width: 3px;
+    -fx-border-color: rgba(255, 0, 0, 1);
+    -fx-text-fill: white;
+    -fx-font-family: helvetica;
+}
+.alert-error *.button-bar *.container{
+}
+.alert-error *.button-bar *.container *.button {
+    -fx-background-color: #d9d9d9;
+    -fx-text-fill: #1e2a39;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(GAUSSIAN, rgba(255, 255, 255, 0.7), 13, 0, 0, 0);
+}
+.alert-error *.button-bar > *.container *.button:hover{
+    -fx-background-color: darkred;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(GAUSSIAN, rgba(255, 255, 255, 0.7), 13, 0, 0, 0);
+}
+.alert-error *.content{
+    -fx-padding: 0.833em;
+    -fx-font-size: 14px;
+    -fx-font-style: italic bold;
+    -fx-text-fill: white;
+    -fx-wrap-text: true;
+}
+.alert-error *.header-panel{
+    -fx-background-color: #1a2c3b;
+}
+.alert-error *.header-panel *.label{
+    -fx-font-size: 1.4em;
+    -fx-wrap-text: true;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+}
+.alert-error *.header-panel *.graphic-container{
+    -fx-padding: 0 0 0 0.833em;
+}
+.alert-error *.graphic-container{
+    -fx-padding: 0.833em 0 0 0.833em;
+}
+
+
+/*SUCCES*/
+.alert-success.dialog-pane {
+    -fx-background-color: #1a2c3b;
+    -fx-border-width: 3px;
+    -fx-border-color: rgb(69, 189, 40);
+    -fx-text-fill: white;
+    -fx-font-family: helvetica;
+}
+.alert-success *.button-bar *.container{
+}
+.alert-success *.button-bar *.container *.button {
+    -fx-background-color: #d9d9d9;
+    -fx-text-fill: #1e2a39;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(GAUSSIAN, rgba(255, 255, 255, 0.7), 13, 0, 0, 0);
+}
+.alert-success *.button-bar > *.container *.button:hover{
+    -fx-background-color: darkgreen;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(GAUSSIAN, rgba(255, 255, 255, 0.7), 13, 0, 0, 0);
+}
+.alert-success *.content{
+    -fx-padding: 0.833em;
+    -fx-font-size: 14px;
+    -fx-font-style: italic bold;
+    -fx-text-fill: white;
+    -fx-wrap-text: true;
+}
+.alert-success *.header-panel{
+    -fx-background-color: #1a2c3b;
+}
+.alert-success *.header-panel *.label{
+    -fx-font-size: 1.4em;
+    -fx-wrap-text: true;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+}
+.alert-success *.header-panel *.graphic-container{
+    -fx-padding: 0 0 0 0.833em;
+}
+.alert-success *.graphic-container{
+    -fx-padding: 0.833em 0 0 0.833em;
+}
+
 
 /************************  MENU BAR ***************************/
 .menu-bar-{
@@ -42,6 +138,8 @@
 
 
 
+
+
 /************************  LOGIN PAGE ***************************/
 .login-button{
     -fx-background-color: #d9d9d9;
@@ -73,6 +171,11 @@
     -fx-text-fill: #fff;
     -fx-font-size: 25px;
     -fx-font-weight: bold;
+}
+.login-desc{
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
 }
 .login-text-field{
     -fx-background-color: #d9d9d9;

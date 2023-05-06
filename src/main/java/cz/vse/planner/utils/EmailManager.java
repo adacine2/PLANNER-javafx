@@ -10,8 +10,8 @@ public class EmailManager {
     private static String useremail;
 
     public static void sendEmail(String to, String subject, String body) {
-        String from = "myplannerappka@gmail.com"; // Your Gmail address
-        String appPassword = "qevmmceddlmyupiy"; // Replace with your generated app password
+        String from = "myplannerappka@gmail.com"; // Gmail address - sender
+        String appPassword = "qevmmceddlmyupiy"; // WEB APP PASSWORD for Google
 
         Properties properties = new Properties();
         properties.put("mail.smtp.host", "smtp.gmail.com");
@@ -54,7 +54,7 @@ public class EmailManager {
      * @return "new" useremail
      */
     public void setLoginEmail(String email) {
-        System.out.println("kokotina "+email);
+        System.out.println("User insert email: "+email);
         this.useremail = email;
     }
 

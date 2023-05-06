@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="SHOP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="SHOPITEM"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SHOPITEM">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MODEL"/>
+        <xs:element ref="PROCESSOR"/>
+        <xs:element ref="INTERNAL_MEMORY"/>
+        <xs:element ref="FAST_CHARGING"/>
+        <xs:element ref="iOS"/>
+      </xs:sequence>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MODEL" type="xs:string"/>
+  <xs:element name="PROCESSOR" type="xs:string"/>
+  <xs:element name="INTERNAL_MEMORY">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="SIZE"/>
+        <xs:element ref="UNIT"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FAST_CHARGING">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="SIZE"/>
+        <xs:element ref="UNIT"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="iOS" type="xs:integer"/>
+  <xs:element name="SIZE" type="xs:integer"/>
+  <xs:element name="UNIT" type="xs:NCName"/>
+</xs:schema>

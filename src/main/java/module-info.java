@@ -28,6 +28,18 @@ module cz.vse.planner {
     requires com.google.api.client.http.apache.v2;
     requires google.http.client.jackson2;
 
+    /*   SPRINGBOOT */
+    requires spring.boot;
+    requires spring.boot.autoconfigure;
+    requires spring.boot.starter.thymeleaf;
+    requires spring.boot.starter;
+    requires lombok;
+    requires spring.boot.starter.web;
+    requires spring.context;
+    requires spring.data.jpa;
+    requires java.persistence;
+    requires spring.beans;
+
 
     opens cz.vse.planner.main to javafx.fxml, javafx.graphics;
     exports cz.vse.planner.main to javafx.fxml, javafx.graphics;
@@ -35,4 +47,6 @@ module cz.vse.planner {
     exports cz.vse.planner;
     exports cz.vse.planner.utils;
     opens cz.vse.planner.utils to javafx.fxml;
+    exports cz.vse.planner.entities;
+    opens cz.vse.planner.entities to javafx.fxml;
 }

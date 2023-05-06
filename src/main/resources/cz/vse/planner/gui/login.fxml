@@ -79,6 +79,16 @@
       <HBox alignment="CENTER_RIGHT" maxHeight="75.0" prefHeight="50.0" styleClass="menu-bar-" GridPane.columnIndex="5" GridPane.columnSpan="2">
          <children>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
+            <Button id="NOTIF-button" fx:id="MenuButtonNotif" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" styleClass="menu-button">
+               <graphic>
+                  <ImageView fx:id="MenuButtonNotifICON" cache="true" cacheHint="SPEED" fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/bell_b.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
             <Button id="ADMIN-button" fx:id="MenuButtonAdmin" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" styleClass="menu-button" text="home" HBox.hgrow="NEVER">
                <graphic>
                   <ImageView fx:id="iconADMIN1" cache="true" cacheHint="SPEED" fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
@@ -101,14 +111,15 @@
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="60.0" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="60.0" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="75.0" minHeight="20.0" prefHeight="50.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" styleClass="login-label" text="USER VERIFICATION" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <TextField id="EMAIL" fx:id="LoginEmail" onAction="#HandleLoginEmail" promptText="Email" styleClass="login-text-field" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1" />
-            <Button id="NEXT-button" fx:id="LoginButtonNext" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" minHeight="50.0" minWidth="90.0" mnemonicParsing="false" onAction="#handleLoginButtonNext" text="NEXT" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <TextField id="EMAIL" fx:id="LoginEmail" onAction="#HandleLoginEmail" promptText="Email" styleClass="login-text-field" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+            <Button id="NEXT-button" fx:id="LoginButtonNext" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" minHeight="50.0" minWidth="90.0" mnemonicParsing="false" onAction="#handleLoginButtonNext" text="NEXT" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -124,6 +135,7 @@
                   <String fx:value="next" />
                </styleClass>
             </Button>
+            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" styleClass="login-desc" text="Please enter your email to register/login." textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
    </children>
