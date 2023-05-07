@@ -41,7 +41,6 @@ module cz.vse.planner {
     requires jakarta.transaction;
     requires jakarta.cdi;
     /* JPA communicator */
-    requires eclipselink;
     requires org.hibernate.orm.core;
     /* JAXB */
     requires java.xml.bind;

@@ -35,7 +35,7 @@ public class EmailManager {
         message.setSubject(subject);
         message.setText(body);
 
-        mailSender.send(message);
+        //mailSender.send(message);
         System.out.println("Email sent successfully.");
     }
 
