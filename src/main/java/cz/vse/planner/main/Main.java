@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @ComponentScan(basePackages = {"cz.vse.planner"})
 @EnableJpaRepositories(basePackages = {"cz.vse.planner"})
+@EntityScan(basePackages = "cz.vse.planner.entity")
 public class Main {
     private static ConfigurableApplicationContext springContext;
 

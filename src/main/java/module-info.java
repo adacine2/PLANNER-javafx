@@ -37,6 +37,9 @@ module cz.vse.planner {
     requires spring.boot.starter.mail;
     /* JPA - Jakarta - SpringToSQL api */
     requires jakarta.persistence;
+    requires jakarta.annotation;
+    requires jakarta.transaction;
+    requires jakarta.cdi;
     /* JPA communicator */
     requires eclipselink;
     /* JAXB */
