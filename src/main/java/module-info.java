@@ -44,15 +44,11 @@ module cz.vse.planner {
     requires eclipselink;
     /* JAXB */
     requires java.xml.bind;
-
     /*** SPRINGBOOT ***/
 
     opens cz.vse.planner.main to javafx.fxml, javafx.graphics, spring.beans, spring.context, spring.core, spring.boot.autoconfigure;
     exports cz.vse.planner.main to javafx.fxml, javafx.graphics, spring.beans, spring.context, spring.core, spring.boot.autoconfigure;
-    /*
-    opens cz.vse.planner to javafx.fxml;
-    exports cz.vse.planner;
-    */
+
     exports cz.vse.planner.utils;
     opens cz.vse.planner.utils to javafx.fxml;
 

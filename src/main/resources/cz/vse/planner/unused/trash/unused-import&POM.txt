@@ -15,6 +15,11 @@
     /* MAIL API */
     requires javax.mail.api;
 
+    /*
+    opens cz.vse.planner to javafx.fxml;
+    exports cz.vse.planner;
+    */
+
 /******************* POM *******************/
 
     <!-- MAIL -->
