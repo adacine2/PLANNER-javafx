@@ -1,34 +1,21 @@
 module cz.vse.planner {
+    /*** JavaFX ***/
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
 
+    requires javafx.graphics;
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
-    requires eu.hansolo.tilesfx;
-    requires eu.hansolo.fx.countries;
-    requires eu.hansolo.fx.heatmap;
-    requires eu.hansolo.toolboxfx;
-    requires eu.hansolo.toolbox;
     requires java.sql;
-    requires jbcrypt;
-    requires javax.mail.api;
     requires jdk.httpserver;
-
-    requires com.google.api.client;
-    requires com.google.api.client.auth;
-    requires com.google.api.client.extensions.java6.auth;
-    requires com.google.api.client.extensions.jetty.auth;
-    requires google.api.client;
-    requires google.api.services.gmail.v1.rev110;
-    requires com.google.api.client.json.gson;
-    requires com.google.api.client.http.apache.v2;
-    requires google.http.client.jackson2;
-
-    /*   SPRINGBOOT */
+    /* JBCRYPT */
+    requires jbcrypt;
+    /*** JavaFX ***/
+    /*** SPRINGBOOT ***/
     requires spring.boot;
     requires spring.boot.autoconfigure;
     requires spring.boot.starter.thymeleaf;
@@ -37,16 +24,35 @@ module cz.vse.planner {
     requires spring.boot.starter.web;
     requires spring.context;
     requires spring.data.jpa;
-    requires java.persistence;
     requires spring.beans;
+    requires spring.core;
+    requires spring.web;
+    requires spring.webmvc;
+    requires spring.tx;
+    requires spring.data.commons;
+    requires spring.boot.starter.data.jpa;
+    requires spring.boot.starter.jdbc;
+    requires spring.context.support;
+    /* JPA - Jakarta - SpringToSQL api */
+    requires jakarta.persistence;
+    /* JPA communicator */
+    requires eclipselink;
+    /* Spring Mailer */
+    requires spring.boot.starter.mail;
+    /*** SPRINGBOOT ***/
 
-
-    opens cz.vse.planner.main to javafx.fxml, javafx.graphics;
-    exports cz.vse.planner.main to javafx.fxml, javafx.graphics;
+    opens cz.vse.planner.main to javafx.fxml, javafx.graphics, spring.beans, spring.context, spring.core, spring.boot.autoconfigure;
+    exports cz.vse.planner.main to javafx.fxml, javafx.graphics, spring.beans, spring.context, spring.core, spring.boot.autoconfigure;
+    /*
     opens cz.vse.planner to javafx.fxml;
     exports cz.vse.planner;
+    */
     exports cz.vse.planner.utils;
     opens cz.vse.planner.utils to javafx.fxml;
-    exports cz.vse.planner.entities;
-    opens cz.vse.planner.entities to javafx.fxml;
+
+    exports cz.vse.planner.controls to javafx.fxml, javafx.graphics, spring.beans, spring.context, spring.core;
+    opens cz.vse.planner.controls to javafx.fxml, javafx.graphics, spring.beans, spring.context, spring.core;
+
+    opens cz.vse.planner.entity to javafx.fxml, javafx.graphics, spring.beans, spring.boot.autoconfigure, spring.context, spring.core;
+    exports cz.vse.planner.entity to javafx.fxml, javafx.graphics, spring.beans, spring.boot.autoconfigure, spring.context, spring.core;
 }

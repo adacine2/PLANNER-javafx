@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class MainController implements Initializable {
+public class Main_Controller implements Initializable {
     @FXML
     private Button MenuButtonHome;
     @FXML

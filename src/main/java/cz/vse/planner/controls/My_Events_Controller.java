@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class My_EventsController implements Initializable {
+public class My_Events_Controller implements Initializable {
     @FXML
     private Button MenuButtonHome;
     @FXML

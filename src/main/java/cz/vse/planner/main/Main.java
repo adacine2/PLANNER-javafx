@@ -1,33 +1,33 @@
 package cz.vse.planner.main;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.stage.Stage;
-
-import java.io.IOException;
-import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
 
 @SpringBootApplication
-public class Main extends Application {
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/home.fxml"));
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/login.fxml"));
-        Parent root = loader.load();
+@ComponentScan(basePackages = {"cz.vse.planner"})
+@EnableJpaRepositories(basePackages = {"cz.vse.planner"})
+public class Main {
+    private static ConfigurableApplicationContext springContext;
 
-        Scene scene = new Scene(root, 320, 240);
-        stage.setTitle("PLANNER v0.0.2");
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("/cz/vse/planner/icons/diary_small_b.png")));
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.show();
+    public static ConfigurableApplicationContext getSpringContext() {
+        return springContext;
     }
 
     public static void main(String[] args) {
-        launch();
+        springContext = new SpringApplicationBuilder(Main.class).run(args);
+        JavaFxApp javaFxApp = springContext.getBean(JavaFxApp.class);
+        Application.launch(JavaFxApp.class, args);
     }
 }

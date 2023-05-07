@@ -36,11 +36,10 @@ public class PasswordManager {
             PreparedStatement pstmt = con.prepareStatement(query);
             pstmt.setString(1, email);
             ResultSet rs = pstmt.executeQuery();
-            System.out.println("email je: "+ email);
+            System.out.println("email je: " + email);
             if (rs.next()) {
                 password = rs.getString("password");
             }
-
             pstmt.close();
             con.close();
         } catch (SQLException e) {

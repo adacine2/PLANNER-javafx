@@ -20,11 +20,11 @@ import java.util.ResourceBundle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import javax.mail.MessagingException;
+
 
 
 @Controller
-public class LoginController implements Initializable{
+public class Login_Controller implements Initializable{
     @FXML
     private Button MenuButtonHome;
     @FXML
@@ -124,8 +124,8 @@ public class LoginController implements Initializable{
             if (!userService.userExists(email)) {
                 try {
                     userService.addUser(email);
-                } catch (MessagingException e) {
-                    // handle the exception
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
                 Platform.runLater(() -> {

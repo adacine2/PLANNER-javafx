@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 
 
 
-public class Login_PasswordController implements Initializable {
+public class Login_Password_Controller implements Initializable {
     @FXML
     private Button MenuButtonHome;
     @FXML
