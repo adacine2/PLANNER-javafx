@@ -42,6 +42,7 @@ module cz.vse.planner {
     requires jakarta.cdi;
     /* JPA communicator */
     requires eclipselink;
+    requires org.hibernate.orm.core;
     /* JAXB */
     requires java.xml.bind;
     /*** SPRINGBOOT ***/
@@ -55,6 +56,6 @@ module cz.vse.planner {
     exports cz.vse.planner.controls to javafx.fxml, javafx.graphics, spring.beans, spring.context, spring.core;
     opens cz.vse.planner.controls to javafx.fxml, javafx.graphics, spring.beans, spring.context, spring.core;
 
-    opens cz.vse.planner.entity to javafx.fxml, javafx.graphics, spring.beans, spring.boot.autoconfigure, spring.context, spring.core, spring.data.jpa, eclipselink;
-    exports cz.vse.planner.entity to javafx.fxml, javafx.graphics, spring.beans, spring.boot.autoconfigure, spring.context, spring.core, spring.data.jpa, eclipselink;
+    opens cz.vse.planner.entity to javafx.fxml, javafx.graphics, spring.beans, spring.boot.autoconfigure, spring.context, spring.core, spring.data.jpa, eclipselink,org.hibernate.orm.core;
+    exports cz.vse.planner.entity to javafx.fxml, javafx.graphics, spring.beans, spring.boot.autoconfigure, spring.context, spring.core, spring.data.jpa, eclipselink, org.hibernate.orm.core;
 }
