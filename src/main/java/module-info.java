@@ -33,12 +33,15 @@ module cz.vse.planner {
     requires spring.boot.starter.data.jpa;
     requires spring.boot.starter.jdbc;
     requires spring.context.support;
+    /* Spring Mailer */
+    requires spring.boot.starter.mail;
     /* JPA - Jakarta - SpringToSQL api */
     requires jakarta.persistence;
     /* JPA communicator */
     requires eclipselink;
-    /* Spring Mailer */
-    requires spring.boot.starter.mail;
+    /* JAXB */
+    requires java.xml.bind;
+
     /*** SPRINGBOOT ***/
 
     opens cz.vse.planner.main to javafx.fxml, javafx.graphics, spring.beans, spring.context, spring.core, spring.boot.autoconfigure;
