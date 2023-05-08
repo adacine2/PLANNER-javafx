@@ -1,14 +1,23 @@
 package cz.vse.planner.utils;
 
 import org.mindrot.jbcrypt.BCrypt;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.security.SecureRandom;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.sql.DataSource;
 
+@Component
 public class PasswordManager {
+
+    @Autowired
+    private EmailManager emailManager;
+    @Autowired
+    private DataSource dataSource;
 
     /**
      * Generates a random password with the specified length.
@@ -28,10 +37,11 @@ public class PasswordManager {
         return password.toString();
     }
 
-    public static String getPasswordFromDB(String email) {
+    public String getPasswordFromDB() {
+        String email = emailManager.getLoginEmail();
         String password = null;
         try {
-            Connection con = DBManager.getConnection();
+            Connection con = dataSource.getConnection();
             String query = "SELECT password FROM users WHERE email = ?";
             PreparedStatement pstmt = con.prepareStatement(query);
             pstmt.setString(1, email);
@@ -54,8 +64,4 @@ public class PasswordManager {
         }
         return BCrypt.checkpw(userEnteredPassword, storedHash);
     }
-
-
-
-
 }

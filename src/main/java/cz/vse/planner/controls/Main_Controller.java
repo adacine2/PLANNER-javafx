@@ -2,32 +2,20 @@ package cz.vse.planner.controls;
 import cz.vse.planner.utils.*;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
-
+@Component
 public class Main_Controller implements Initializable {
     @FXML
-    private Button MenuButtonHome;
-    @FXML
-    private Button MenuButtonLogin;
-    @FXML
-    private Button MenuButtonAdmin;
-    @FXML
-    private Button MenuButtonNotif;
-    @FXML
-    private Button MenuButtonEvents;
-    @FXML
-    private Button MenuButtonNews;
-
+    private Button MenuButtonHome, MenuButtonLogin, MenuButtonPlanner, MenuButtonNotif, MenuButtonAdmin, MenuButtonUser , MenuButtonEvents, MenuButtonNews;
     @FXML
     private void handleMenuButtonHome() {
         showHomeScene();
@@ -36,7 +24,16 @@ public class Main_Controller implements Initializable {
     private void handleMenuButtonLogin() {
         showLoginScene();
     }
-
+    @FXML
+    private void handleMenuButtonPlanner() {
+        showPlannerScene();
+    }
+    @Autowired
+    private SceneManager sceneManager;
+    @Autowired
+    private UserManager userManager;
+    @Autowired
+    private LayoutManager layoutManager;
 
     /** IMAGE CHANGE ON HOVER
      * This part of code is used to change the image on hover
@@ -44,47 +41,41 @@ public class Main_Controller implements Initializable {
      * /utils/*
      * requires class to implements Initializable
      */
-    private ChangeTheImage changeTheImage;
     public void initialize(URL location, ResourceBundle resources) {
-        changeTheImage = new ChangeTheImage();
-        changeTheImage.changeButtonImageOnHover(MenuButtonHome, "home");
-        changeTheImage.changeButtonImageOnHover(MenuButtonAdmin, "admin_gear");
-        changeTheImage.changeButtonImageOnHover(MenuButtonNotif, "bell");
+        updateMenuButtonVisibility();
+        changeButtonIconsOnHover();
+    }
+    private void changeButtonIconsOnHover() {
+        layoutManager.changeButtonIconOnHover(MenuButtonHome, "home");
+        layoutManager.changeButtonIconOnHover(MenuButtonNotif, "bell");
+        layoutManager.changeButtonIconOnHover(MenuButtonUser, "user");
+        layoutManager.changeButtonIconOnHover(MenuButtonAdmin, "admin_gear");
+    }
+    private void updateMenuButtonVisibility() {
+        if (userManager.isUserLogged()) {
+            layoutManager.updateMenuButtonVisibility(
+                    Arrays.asList(MenuButtonPlanner,MenuButtonUser), // Show when logged in
+                    Arrays.asList(MenuButtonLogin,MenuButtonAdmin) // Hide when logged in
+            );
+        } else {
+            layoutManager.updateMenuButtonVisibility(
+                    Arrays.asList(MenuButtonLogin,MenuButtonAdmin), // Show when not logged in
+                    Arrays.asList(MenuButtonPlanner,MenuButtonUser) // Hide when not logged in
+            );
+        }
     }
 
-
     public void showHomeScene() {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/home.fxml"));
-            Parent root = fxmlLoader.load();
-
-            // Get the current stage from any control (in this case, the HOME button)
-            Stage primaryStage = (Stage) MenuButtonHome.getScene().getWindow();
-            // Save the current dimensions of the window
-            double currentWidth = primaryStage.getWidth();
-            double currentHeight = primaryStage.getHeight();
-            Scene homeScene = new Scene(root, currentWidth, currentHeight);
-
-            primaryStage.setScene(homeScene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Stage primaryStage = (Stage) MenuButtonHome.getScene().getWindow();
+        sceneManager.changeScene(primaryStage, "/cz/vse/planner/gui/home.fxml");
     }
 
     private void showLoginScene() {
-        try {
-            FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("/cz/vse/planner/gui/login.fxml"));
-            Parent root1 = fxmlLoader1.load();
-
-            Stage primaryStage1 = (Stage) MenuButtonLogin.getScene().getWindow();
-            double currentWidth = primaryStage1.getWidth();
-            double currentHeight = primaryStage1.getHeight();
-            Scene passwordScene = new Scene(root1, currentWidth, currentHeight);
-
-            primaryStage1.setScene(passwordScene);
-        } catch (IOException exception){
-            exception.printStackTrace();
-        }
+        Stage primaryStage = (Stage) MenuButtonLogin.getScene().getWindow();
+        sceneManager.changeScene(primaryStage, "/cz/vse/planner/gui/login.fxml");
     }
-
+    private void showPlannerScene() {
+        Stage primaryStage = (Stage) MenuButtonPlanner.getScene().getWindow();
+        sceneManager.changeScene(primaryStage, "/cz/vse/planner/gui/planner.fxml");
+    }
 }

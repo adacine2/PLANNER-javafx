@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" stylesheets="@../styles/Style_Dark.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.planner.controls.Main_Controller">
+<GridPane stylesheets="@../styles/Style_Dark.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.planner.controls.Main_Controller">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -37,7 +37,7 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <HBox alignment="CENTER_LEFT" maxHeight="75.0" prefHeight="50.0" styleClass="menu-bar-" GridPane.columnSpan="5">
+      <HBox alignment="CENTER_LEFT" maxHeight="75.0" prefHeight="50.0" styleClass="menu-bar-" GridPane.columnSpan="5" GridPane.hgrow="ALWAYS">
          <children>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
             <Button id="HOME-button" fx:id="MenuButtonHome" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuButtonHome" prefHeight="50.0" prefWidth="60.0" text="HOME">
@@ -62,6 +62,7 @@
                   <Insets />
                </HBox.margin>
             </Button>
+            <Button id="LOGIN-button" fx:id="MenuButtonPlanner" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuButtonPlanner" prefHeight="50.0" prefWidth="100.0" styleClass="menu-button" text="PLANNER" />
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
             <Button id="EVENTS-button" fx:id="MenuButtonEvents" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="menu-button" text="EVENTS">
                <HBox.margin>
@@ -77,7 +78,7 @@
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
          </children>
       </HBox>
-      <HBox alignment="CENTER_RIGHT" maxHeight="75.0" prefHeight="50.0" styleClass="menu-bar-" GridPane.columnIndex="5">
+      <HBox alignment="CENTER_RIGHT" maxHeight="75.0" prefHeight="50.0" styleClass="menu-bar-" GridPane.columnIndex="5" GridPane.hgrow="ALWAYS">
          <children>
             <Pane maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="6.0" styleClass="menu-separator" />
             <Button id="NOTIF-button" fx:id="MenuButtonNotif" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" styleClass="menu-button" HBox.hgrow="NEVER">
@@ -95,6 +96,15 @@
                   <ImageView fx:id="MenuButtonAdminICON" cache="true" cacheHint="SPEED" fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../icons/admin_gear_b.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="ADMIN-button" fx:id="MenuButtonUser" contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" maxHeight="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" styleClass="menu-button" text="home">
+               <graphic>
+                  <ImageView fx:id="MenuButtonUserICON" cache="true" cacheHint="SPEED" fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/user_b.png" />
                      </image>
                   </ImageView>
                </graphic>

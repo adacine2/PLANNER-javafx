@@ -18,23 +18,19 @@ public class My_Events_Controller implements Initializable {
     private Button MenuButtonHome;
     @FXML
     private Button MenuButtonUser;
-
     @FXML
     private void handleMenuButtonHome() {
         showHomeScene();
     }
 
     /** IMAGE CHANGE ON HOVER
-     * This part of code is used to change the image on hover
-     * necesarry to import the class ChangeTheImage in utils
-     * /utils/*
      * requires class to implements Initializable
      */
-    private ChangeTheImage changeTheImage;
+    private LayoutManager layoutManager;
     public void initialize(URL location, ResourceBundle resources) {
-        changeTheImage = new ChangeTheImage();
-        changeTheImage.changeButtonImageOnHover(MenuButtonHome, "home");
-        changeTheImage.changeButtonImageOnHover(MenuButtonUser, "user");
+        layoutManager = new LayoutManager();
+        layoutManager.changeButtonIconOnHover(MenuButtonHome, "home");
+        layoutManager.changeButtonIconOnHover(MenuButtonUser, "user");
     }
 
     public void showHomeScene() {
@@ -54,5 +50,4 @@ public class My_Events_Controller implements Initializable {
             e.printStackTrace();
         }
     }
-
 }

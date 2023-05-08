@@ -3,12 +3,12 @@ module cz.vse.planner {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
-
     requires javafx.graphics;
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
+
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
     requires jdk.httpserver;
@@ -33,8 +33,11 @@ module cz.vse.planner {
     requires spring.boot.starter.data.jpa;
     requires spring.boot.starter.jdbc;
     requires spring.context.support;
+    requires spring.expression;
+    requires spring.jdbc;
+    requires spring.orm;
     /* Spring Mailer */
-    requires spring.boot.starter.mail;
+    requires jakarta.mail;
     /* JPA - Jakarta - SpringToSQL api */
     requires jakarta.persistence;
     requires jakarta.annotation;
@@ -46,15 +49,21 @@ module cz.vse.planner {
     requires java.xml.bind;
     /*** SPRINGBOOT ***/
 
+    /* USES */
+
+
+
     opens cz.vse.planner.main to javafx.fxml, javafx.graphics, spring.beans, spring.context, spring.core, spring.boot.autoconfigure;
     exports cz.vse.planner.main to javafx.fxml, javafx.graphics, spring.beans, spring.context, spring.core, spring.boot.autoconfigure;
 
     exports cz.vse.planner.utils;
-    opens cz.vse.planner.utils to javafx.fxml;
+
+    opens cz.vse.planner.repo to spring.data.commons;
 
     exports cz.vse.planner.controls to javafx.fxml, javafx.graphics, spring.beans, spring.context, spring.core;
     opens cz.vse.planner.controls to javafx.fxml, javafx.graphics, spring.beans, spring.context, spring.core;
 
-    opens cz.vse.planner.entity to javafx.fxml, javafx.graphics, spring.beans, spring.boot.autoconfigure, spring.context, spring.core, spring.data.jpa, eclipselink,org.hibernate.orm.core;
-    exports cz.vse.planner.entity to javafx.fxml, javafx.graphics, spring.beans, spring.boot.autoconfigure, spring.context, spring.core, spring.data.jpa, eclipselink, org.hibernate.orm.core;
+    opens cz.vse.planner.entity to javafx.fxml, javafx.graphics, spring.beans, spring.boot.autoconfigure, spring.context, spring.core, spring.data.jpa, javafx.base, org.hibernate.orm.core;
+    exports cz.vse.planner.entity to javafx.fxml, javafx.graphics, spring.beans, spring.boot.autoconfigure, spring.context, spring.core, spring.data.jpa, javafx.base, org.hibernate.orm.core;
+    opens cz.vse.planner.utils to javafx.fxml, javafx.graphics, spring.beans, spring.boot.autoconfigure, spring.context, spring.core;
 }
