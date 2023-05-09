@@ -45,7 +45,7 @@ public class SceneManager {
             loader.setControllerFactory(springContext::getBean);
             Parent root = loader.load();
             Scene scene = new Scene(root, 320, 240);
-            stage.setTitle("PLANNER v0.2.0");
+            stage.setTitle("PLANNER v0.2.1");
             stage.getIcons().add(new Image(getClass().getResourceAsStream("/cz/vse/planner/icons/diary_small_b.png")));
             stage.setScene(scene);
             stage.setMaximized(true);
